@@ -1,0 +1,34 @@
+
+…
+java:S1104"WMake purchaseDao a static final constant or non-public and provide accessors if needed.(¥†þ£HRMINORZVULNERABILITY
+‰
+java:S1104"VMake appContext a static final constant or non-public and provide accessors if needed.(«ÂÀâýÿÿÿÿHRMINORZVULNERABILITY
+c
+java:S1444"0Make this "public static appContext" field final(«ÂÀâýÿÿÿÿHRMINORZVULNERABILITY
+_
+java:S1444"1Make this "public static purchaseDao" field final(¥†þ£HRMINORZVULNERABILITY
+‚
+java:S1104"TMake movieDao a static final constant or non-public and provide accessors if needed.(âµÑÐHRMINORZVULNERABILITY
+†
+java:S1104"SMake seatDao a static final constant or non-public and provide accessors if needed.(ï¸ãþøÿÿÿÿHRMINORZVULNERABILITY
+f	java:S125#"<This block of commented-out lines of code should be removed.(Í±ÔHRMAJORZ
+CODE_SMELL
+`
+java:S1444"-Make this "public static seatDao" field final(ï¸ãþøÿÿÿÿHRMINORZVULNERABILITY
+k	java:S125)"<This block of commented-out lines of code should be removed.(ÑªÈ’ùÿÿÿÿHRMAJORZ
+CODE_SMELL
+e	java:S1252"<This block of commented-out lines of code should be removed.(™ó»HRMAJORZ
+CODE_SMELL
+\
+java:S1444".Make this "public static movieDao" field final(âµÑÐHRMINORZVULNERABILITY
+u
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¼¼Û¥ùÿÿÿÿHRMINORZ
+CODE_SMELL
+h	java:S1060"9Replace this use of System.out or System.err by a logger.(­–„´ûÿÿÿÿHRMAJORZ
+CODE_SMELL
+c
+java:S1444"0Make this "public static showingDao" field final(—ù›—úÿÿÿÿH RMINORZVULNERABILITY
+‰
+java:S1104"VMake showingDao a static final constant or non-public and provide accessors if needed.(—ù›—úÿÿÿÿH!RMINORZVULNERABILITY
+b	java:S106/"9Replace this use of System.out or System.err by a logger.(ÉùË7H"RMAJORZ
+CODE_SMELL

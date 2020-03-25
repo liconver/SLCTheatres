@@ -1,20 +1,27 @@
 package com.projecttwo;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.projecttwo.dao.MovieDaoImpl;
-import com.projecttwo.dao.PurchaseDaoImpl;
-import com.projecttwo.dao.ShowingDaoImpl;
-import com.projecttwo.dao.ShowingSeatDaoImpl;
 import com.projecttwo.model.Movie;
 import com.projecttwo.model.Purchase;
 import com.projecttwo.model.Showing;
 import com.projecttwo.model.ShowingSeat;
+import com.projecttwo.model.TicketType;
+import com.projecttwo.model.Users;
+import com.projecttwo.repository.MovieDaoImpl;
+import com.projecttwo.repository.PurchaseDaoImpl;
+import com.projecttwo.repository.ShowingDaoImpl;
+import com.projecttwo.repository.ShowingSeatDaoImpl;
+import com.projecttwo.repository.TicketDaoImpl;
+import com.projecttwo.repository.TicketTypeDaoImpl;
+import com.projecttwo.repository.UserDaoImpl;
 
 public class MainDriver {
 	
@@ -23,6 +30,17 @@ public class MainDriver {
 	public static PurchaseDaoImpl purchaseDao = appContext.getBean("purchaseDao", PurchaseDaoImpl.class);
 	public static ShowingSeatDaoImpl seatDao = appContext.getBean("seatDao", ShowingSeatDaoImpl.class);
 	public static ShowingDaoImpl showingDao = appContext.getBean("showingDao", ShowingDaoImpl.class);
+	public static UserDaoImpl userDao = appContext.getBean("userDao", UserDaoImpl.class);
+	public static TicketTypeDaoImpl ticketTypeDao = appContext.getBean("ticketTypeDao", TicketTypeDaoImpl.class);
+	public static TicketDaoImpl ticketDao = appContext.getBean("ticketDao", TicketDaoImpl.class);
+	
+//	public static MovieDaoImpl movieDao;
+//	public static PurchaseDaoImpl purchaseDao;
+//	public static ShowingSeatDaoImpl seatDao;
+//	public static ShowingDaoImpl showingDao;
+//	public static UserDaoImpl userDao;
+//	public static TicketTypeDaoImpl ticketTypeDao;
+//	public static TicketDaoImpl ticketDao;
 	
 	public final static Logger logger = Logger.getLogger(MainDriver.class);
 	
@@ -30,7 +48,7 @@ public class MainDriver {
 		
 		logger.setLevel(Level.FATAL);
 		
-		insertInitialValues();
+//		insertInitialValues();
 		
 //		System.err.println("Selecting by ID");
 //		System.err.println(movieDao.selectById(1));
@@ -44,12 +62,12 @@ public class MainDriver {
 //		System.err.println(seatDao.selectAll());
 //		System.err.println(showingDao.selectAll());
 		
-		System.out.println("Selecting by Name");
-		System.out.println(seatDao.selectByName("A1"));
+//		System.out.println("Selecting by Name");
+//		System.out.println(seatDao.selectByName("A1"));
 		
 //		ShowingSeat showingSeat = new ShowingSeat("A3", 2);
 //		seatDao.update(showingSeat);
-		
+//		System.out.println(userDao.getUserByUsername("cjf"));
 	}
 	
 	public static void insertInitialValues() {
@@ -85,8 +103,20 @@ public class MainDriver {
 		
 		
 		//User
+		Users user1 = new Users("cjf", "7777", "Christian", "Falzone", "c@gmail.com");
+		Users user2 = new Users("serg", "berg", "Sergio", "Gamboa", "s@yahoo.com");
+		Users user3 = new Users("liam", "taken", "Liam", "Converse", "l@revature.com");
 		
-		//Inserts
+		//Ticket
+//		Ticket ticket1 = new Ticket();
+		
+		//TicketType
+		TicketType ticketType1 = new TicketType("Adult", 12.99);
+		TicketType ticketType2 = new TicketType("Senior", 8.99);
+		TicketType ticketType3 = new TicketType("Child", 6.99);
+		
+		
+///////////Inserts///////////////
 		movieDao.insert(movie1);	movieDao.insert(movie2);	movieDao.insert(movie3);
 		
 		showingDao.insert(showing1);	showingDao.insert(showing2);	showingDao.insert(showing3);
@@ -97,6 +127,13 @@ public class MainDriver {
 		
 		purchaseDao.insert(purchase1);			purchaseDao.insert(purchase2);
 		purchaseDao.insert(purchase3);			purchaseDao.insert(purchase4);
+		
+		userDao.insertUser(user1); 		userDao.insertUser(user2);		userDao.insertUser(user3);	
+		
+		ticketTypeDao.insert(ticketType1);
+		ticketTypeDao.insert(ticketType2);
+		ticketTypeDao.insert(ticketType3);
+		
 		
 	}
 }
