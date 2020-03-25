@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Users\chris\Documents\2001jan27_gitbash\ProjectTwo\.metadata\.plugins\org.eclipse.jdt.core
