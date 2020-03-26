@@ -26,9 +26,9 @@ public class Showing {
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "movie_id_FK")
-	private Movie movieIdFK;
+	private Movie movieHolder;
 	
-	@OneToOne(mappedBy= "showing_id_FK", fetch = FetchType.EAGER)
+	@OneToOne(mappedBy= "showingHolder", fetch = FetchType.EAGER)
 	private ShowingSeat seat;
 	
 	public Showing() {
@@ -45,11 +45,11 @@ public class Showing {
 		this.showtime = showtime;
 	}
 	
-	public Showing(int showingId, Timestamp showtime, Movie movieIdFK) {
+	public Showing(int showingId, Timestamp showtime, Movie movieHolder) {
 		super();
 		this.showingId = showingId;
 		this.showtime = showtime;
-		this.movieIdFK = movieIdFK;
+		this.movieHolder = movieHolder;
 	}
 
 	public int getShowingId() {
@@ -68,17 +68,17 @@ public class Showing {
 		this.showtime = showtime;
 	}
 
-	public Movie getMovieIdFk() {
-		return movieIdFK;
+	public Movie getMovieHolder() {
+		return movieHolder;
 	}
 
-	public void setMovie(Movie movieIdFK) {
-		this.movieIdFK = movieIdFK;
+	public void setMovie(Movie movieHolder) {
+		this.movieHolder = movieHolder;
 	}
 
 	@Override
 	public String toString() {
-		return "Showing [showingId=" + showingId + ", showtime=" + showtime + ", movieIdFK=" + movieIdFK.getMovieId() + ", seat="
+		return "Showing [showingId=" + showingId + ", showtime=" + showtime + ", movieIdFK=" + movieHolder.getMovieId() + ", seat="
 				+ seat.getSeatId() + "]";
 	}
 

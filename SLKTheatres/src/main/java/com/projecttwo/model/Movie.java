@@ -26,7 +26,7 @@ public class Movie {
 	@Column(name = "poster")
 	private String poster;
 	
-	@OneToOne(mappedBy= "movieIdFK", fetch = FetchType.EAGER)
+	@OneToOne(mappedBy= "movieHolder", fetch = FetchType.EAGER)
 	private Showing showing;
 	 
 	

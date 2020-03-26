@@ -26,9 +26,9 @@ public class ShowingSeat {
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "showing_id_FK")
-	private Showing showingIdFK;
+	private Showing showingHolder;
 	
-	@OneToOne(mappedBy= "seat_id_FK", fetch = FetchType.EAGER)
+	@OneToOne(mappedBy= "seatHolder", fetch = FetchType.EAGER)
 	private Ticket ticket;
 	
 	public ShowingSeat() {
@@ -47,19 +47,19 @@ public class ShowingSeat {
 		this.status = status;
 	}
 	
-	public ShowingSeat(int seatId, String seatName, int status, Showing showingIdFK) {
+	public ShowingSeat(int seatId, String seatName, int status, Showing showingHolder) {
 		super();
 		this.seatId = seatId;
 		this.seatName = seatName;
 		this.status = status;
-		this.showingIdFK = showingIdFK;
+		this.showingHolder = showingHolder;
 	}
 	
-	public ShowingSeat(String seatName, int status, Showing showingIdFK) {
+	public ShowingSeat(String seatName, int status, Showing showingHolder) {
 		super();
 		this.seatName = seatName;
 		this.status = status;
-		this.showingIdFK = showingIdFK;
+		this.showingHolder = showingHolder;
 	}
 
 	public int getSeatId() {
@@ -87,17 +87,17 @@ public class ShowingSeat {
 	}
 
 	public Showing getShowingIdFK() {
-		return showingIdFK;
+		return showingHolder;
 	}
 
-	public void setShowingIdFK(Showing showingIdFK) {
-		this.showingIdFK = showingIdFK;
+	public void setShowingHolder(Showing showingHolder) {
+		this.showingHolder = showingHolder;
 	}
 
 	@Override
 	public String toString() {
-		return "ShowingSeat [seatId=" + seatId + ", seatName=" + seatName + ", status=" + status + ", showingIdFK="
-				+ showingIdFK.getShowingId() + "]";
+		return "ShowingSeat [seatId=" + seatId + ", seatName=" + seatName + ", status=" + status + ", showingHolder="
+				+ showingHolder.getShowingId() + "]";
 	}
 	
 }

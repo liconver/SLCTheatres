@@ -23,33 +23,33 @@ public class Ticket {
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "seat_id_FK")
-	private ShowingSeat seatIdFK;
+	private ShowingSeat seatHolder;
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "ticket_type_id_FK")
-	private TicketType ticketTypeIdFK;
+	private TicketType ticketTypeHolder;
 	
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "purchase_id_FK")
-	private Purchase purchaseIdFK;
+	private Purchase purchaseHolder;
 	
 	public Ticket() {
 	}
 
-	public Ticket(int ticketId, ShowingSeat seatIdFK, TicketType ticketTypeIdFK, Purchase purchaseIdFK) {
+	public Ticket(int ticketId, ShowingSeat seatHolder, TicketType ticketTypeHolder, Purchase purchaseHolder) {
 		super();
 		this.ticketId = ticketId;
-		this.seatIdFK = seatIdFK;
-		this.ticketTypeIdFK = ticketTypeIdFK;
-		this.purchaseIdFK = purchaseIdFK;
+		this.seatHolder = seatHolder;
+		this.ticketTypeHolder = ticketTypeHolder;
+		this.purchaseHolder = purchaseHolder;
 	}
 
-	public Ticket(ShowingSeat seatIdFK, TicketType ticketTypeIdFK, Purchase purchaseIdFK) {
+	public Ticket(ShowingSeat seatHolder, TicketType ticketTypeHolder, Purchase purchaseHolder) {
 		super();
-		this.seatIdFK = seatIdFK;
-		this.ticketTypeIdFK = ticketTypeIdFK;
-		this.purchaseIdFK = purchaseIdFK;
+		this.seatHolder = seatHolder;
+		this.ticketTypeHolder = ticketTypeHolder;
+		this.purchaseHolder = purchaseHolder;
 	}
 
 	public int getTicketId() {
@@ -60,33 +60,33 @@ public class Ticket {
 		this.ticketId = ticketId;
 	}
 
-	public ShowingSeat getSeatIdFK() {
-		return seatIdFK;
+	public ShowingSeat getSeatHolder() {
+		return seatHolder;
 	}
 
-	public void setSeatIdFK(ShowingSeat seatIdFK) {
-		this.seatIdFK = seatIdFK;
+	public void setSeatHolder(ShowingSeat seatHolder) {
+		this.seatHolder = seatHolder;
 	}
 
-	public TicketType getTicketTypeIdFK() {
-		return ticketTypeIdFK;
+	public TicketType getTicketTypeHolder() {
+		return ticketTypeHolder;
 	}
 
-	public void setTicketTypeIdFK(TicketType ticketTypeIdFK) {
-		this.ticketTypeIdFK = ticketTypeIdFK;
+	public void setTicketTypeHolder(TicketType ticketTypeHolder) {
+		this.ticketTypeHolder = ticketTypeHolder;
 	}
 
-	public Purchase getPurchaseIdFK() {
-		return purchaseIdFK;
+	public Purchase getPurchaseHolder() {
+		return purchaseHolder;
 	}
 
-	public void setPurchaseIdFK(Purchase purchaseIdFK) {
-		this.purchaseIdFK = purchaseIdFK;
+	public void setPurchaseHolder(Purchase purchaseHolder) {
+		this.purchaseHolder = purchaseHolder;
 	}
 
 	@Override
 	public String toString() {
-		return "Ticket [ticketId=" + ticketId + ", seatIdFK=" + seatIdFK.getSeatId() + ", ticketTypeIdFK=" + ticketTypeIdFK.getTicketTypeId() + ", purchaseIdFK=" + purchaseIdFK.getPurchaseId()
+		return "Ticket [ticketId=" + ticketId + ", seatIdFK=" + seatHolder.getSeatId() + ", ticketTypeIdFK=" + ticketTypeHolder.getTicketTypeId() + ", purchaseIdFK=" + purchaseHolder.getPurchaseId()
 				+ "]";
 	}
 	

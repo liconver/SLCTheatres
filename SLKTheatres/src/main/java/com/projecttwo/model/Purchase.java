@@ -28,9 +28,9 @@ public class Purchase {
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_id_FK")
-	private Users userIdFK;
+	private Users userHolder;
 	
-	@OneToMany(mappedBy = "purchaseIdFK", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "purchaseHolder", fetch = FetchType.EAGER)
 	private List<Ticket> tList = new ArrayList<>();
 	
 	public Purchase() {
@@ -47,17 +47,17 @@ public class Purchase {
 		this.totalCost = totalCost;
 	}
 
-	public Purchase(int purchaseId, double totalCost, Users userIdFK) {
+	public Purchase(int purchaseId, double totalCost, Users userHolder) {
 		super();
 		this.purchaseId = purchaseId;
 		this.totalCost = totalCost;
-		this.userIdFK = userIdFK;
+		this.userHolder = userHolder;
 	}
 	
-	public Purchase(double totalCost, Users userIdFK) {
+	public Purchase(double totalCost, Users userHolder) {
 		super();
 		this.totalCost = totalCost;
-		this.userIdFK = userIdFK;
+		this.userHolder = userHolder;
 	}
 
 	public int getPurchaseId() {
@@ -76,12 +76,12 @@ public class Purchase {
 		this.totalCost = totalCost;
 	}
 
-	public Users getUserIdFK() {
-		return userIdFK;
+	public Users getUserHolder() {
+		return userHolder;
 	}
 
-	public void setUserIdFK(Users userIdFK) {
-		this.userIdFK = userIdFK;
+	public void setUserIdFK(Users userHolder) {
+		this.userHolder = userHolder;
 	}
 
 	public List<Ticket> gettList() {
@@ -94,7 +94,7 @@ public class Purchase {
 
 	@Override
 	public String toString() {
-		return "Purchase [purchaseId=" + purchaseId + ", totalCost=" + totalCost + ", userIdFK=" + userIdFK.getUserId() + ", tList="
+		return "Purchase [purchaseId=" + purchaseId + ", totalCost=" + totalCost + ", userIdFK=" + userHolder.getUserId() + ", tList="
 				+ tList + "]";
 	}
 

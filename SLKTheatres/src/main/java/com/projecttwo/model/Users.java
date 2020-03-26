@@ -31,7 +31,7 @@ public class Users {
 	@Column(name = "email", nullable = false)
 	private String email;
 
-	@OneToMany(mappedBy = "userIdFK", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "userHolder", fetch = FetchType.EAGER)
 	private List<Purchase> pList = new ArrayList<>();
 
 	public Users() {
