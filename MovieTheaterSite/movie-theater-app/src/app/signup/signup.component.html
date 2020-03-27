@@ -1,0 +1,53 @@
+<div class="container">
+    <!--<p>{{ submitMessage }}</p>-->
+    <h2>Sign-up</h2>
+    <form [formGroup]="form" #signupinfo (ngSubmit)="SignUpForm(signupinfo)">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-4">
+                <label for="username">Create a username</label>
+                <input formControlName="username" type="text" class="form-control" placeholder="username">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-1 col-md-4">
+                <label for="email">Enter your email address</label>
+                <input formControlName="email" type="email" class="form-control" placeholder="email">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-1 col-md-4">
+                <label for="firstname">First Name</label>
+                <input formControlName="firstname" type="text" class="form-control" placeholder="firstname">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-1 col-md-4">
+                <label for="lastname">Last Name</label>
+                <input formControlName="lastname" type="text" class="form-control" placeholder="lastname">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-1 col-md-4">
+                <label for="signuppassword">Create A Password</label>
+                <input formControlName="password" type="password" class="form-control" placeholder="password">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-1 col-md-4">
+                <label for="confirmpassword">confirm password</label>
+                <input formControlName="confirmpassword" type="password" class="form-control" placeholder="password">
+            </div>
+        </div>
+
+        <div class="row" style="margin: 2rem;">
+            <div class="col-md-offset-1 col-md-4">
+                <button class="btn btn-success">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

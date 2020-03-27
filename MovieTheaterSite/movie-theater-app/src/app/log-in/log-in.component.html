@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Login</h2>
+    <form #loginForm="ngForm" (ngSubmit)="LoginSubmit(loginForm)">
+        {{diagnostic}}
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" placeholder="username" id="username" required
+                [(ngModel)]="model1.username" name="username" #name="ngModel">
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">username/email is required</div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" placeholder="password" id="password" required
+                [(ngModel)]="model1.password" name="password" #name="ngModel">
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">password is required</div>
+        </div>
+        <button type="submit" class="btn btn-success" style="margin: 2rem;"
+            [disabled]="!loginForm.form.valid">Submit</button>
+            <a routerLink="/signup">
+        <button type="button" class="btn btn-light" >Sign up</button>
+        </a>
+    </form>
+</div>
+

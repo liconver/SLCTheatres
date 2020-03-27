@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- Tells spring we are using annotations -->
+	<context:annotation-config />
+	<context:component-scan
+		base-package="com.project"/>
+
+	<!-- To turn on Spring ORM annotations -->
+	<tx:annotation-driven />
+
+	<!-- turn on Spring MVC annotations -->
+	<mvc:annotation-driven />
+
+	<!-- DATASOURCE this bean is a JDBC instance, it is an object that holds 
+		all the attributes that is necessary to connect to any database. -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="org.postgresql.Driver"></property>
+		<!-- TO USE SYSTEM ENVIRONMENT VARIABLES IN XML DOC -->
+		<!-- <property name="username" value="#{systemEvironment['enviromentVariableName']}"></property> -->
+		<property name="url"
+			value="jdbc:postgresql://revature-training.c8m2432hgexo.us-east-2.rds.amazonaws.com:5432/project2db"></property>
+		<property name="username" value="#{systemEnvironment['dbusername']}"></property>
+		<property name="password" value="#{systemEnvironment['dbpassword']}"></property>
+	</bean>
+	
+	<!-- SESSION FACTORY
+	this bean is a Hibernate instance
+		this will be a bean that is responsable for creating hibernate sessions -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="packagesToScan" value="com.project.model"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">none</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- TRANSACTION MANAGER
+		This bean is a Hibernate instance.
+		this bean is responsible for manageng your transactions, and managing you contextual sessions.
+		
+		What is a contextual session
+			Sessions with information SPECIFIC TO YOU. They make it so that each user sees only THIER
+			session information, not someone elses
+			
+		PROGRAMMATIC TRANSACTION MANAGMENT
+			programmed in our source code, transaction management is hardcoded in to our current application
+			Hardcoding our transaction logic between our business logic
+			Introduces boilplate code.
+			
+		DECLARATIVE tRANSACTION MANAGMENT
+			Allows us to manage transactions through configurations
+			Separates our trasaction logic from our busniss logic
+			keep boiler plate code away from our business logic 
+			
+		SCOPES OF TRANSACTIONAL MANAGMENT
+		
+			-Global Transactions: Where transactions occur between different different DB, this is also called 
+			distributed transaction processing. this occurs application server level, it is a complex process.
+			
+			-Local Transactions: Where the transaction occurs between the application and a single RDBMS-->
+			
+		<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+				<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+		
+</beans>
+	
+	
+	
+		

@@ -1,0 +1,30 @@
+<!--<h2>Now Showing</h2>
+<div class="container justify-content-center" style="margin: auto;" id="movList">
+<ul class="list-group" >
+    
+    <li *ngFor="let movie of movies" (click)="onSelect(movie)" class="list-group-item list-group-item-action" style="width: 300px; margin: 10px; ">
+        <div class="container" style= "display: inline-block;">
+        <span>{{movie.id}} </span> {{movie.name}}
+        <img [src]=movie.poster [style.width.px]='imagewidth' [style.margin.px]='imagemargin' align="right">
+    </div>
+    </li>
+    
+</ul>
+</div>
+<app-movie-detail [movie]="selectedMovie"></app-movie-detail>-->
+<h2>Now Showing</h2>
+<div class="container justify-content-center" style="margin: auto;">
+<ul class="list-group" >
+    <div class="row">
+    <li *ngFor="let movie of movies" class="list-group-item list-group-item-action text-center" 
+    style="width: 300px; margin: 10px; "> 
+    <!--not sure if should style with background-color: #101010;-->
+    <a routerLink="/detail/{{movie.id}}">
+        <span>{{movie.id}} </span> {{movie.name}}
+        <br>
+        <img [src]=movie.poster [style.width.px]='imagewidth' [style.margin.px]='imagemargin' align="middle">
+    </a>
+    </li>
+    </div>
+</ul>
+</div>
