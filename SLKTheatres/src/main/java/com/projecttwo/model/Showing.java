@@ -1,6 +1,7 @@
 package com.projecttwo.model;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,6 +10,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -23,8 +26,12 @@ public class Showing {
 	@Column(name = "showtime", nullable = false)
 	private Timestamp showtime;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private Movie movie;
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "movie_id_FK")
+	private Movie movieHolder;
+	
+	@OneToMany(mappedBy= "showingHolder", fetch = FetchType.EAGER) //
+	private List<ShowingSeat> seat;
 	
 	public Showing() {
 	}
@@ -40,11 +47,11 @@ public class Showing {
 		this.showtime = showtime;
 	}
 	
-	public Showing(int showingId, Timestamp showtime, Movie movie) {
+	public Showing(int showingId, Timestamp showtime, Movie movieHolder) {
 		super();
 		this.showingId = showingId;
 		this.showtime = showtime;
-		this.movie = movie;
+		this.movieHolder = movieHolder;
 	}
 
 	public int getShowingId() {
@@ -63,17 +70,17 @@ public class Showing {
 		this.showtime = showtime;
 	}
 
-	public Movie getMovie() {
-		return movie;
+	public Movie getMovieHolder() {
+		return movieHolder;
 	}
 
-	public void setMovie(Movie movie) {
-		this.movie = movie;
+	public void setMovie(Movie movieHolder) {
+		this.movieHolder = movieHolder;
 	}
 
 	@Override
 	public String toString() {
-		return "Showing [showingId=" + showingId + ", showtime=" + showtime + ", movie=" + movie + "]";
+		return "Showing [showingId=" + showingId + ", showtime=" + showtime + ", movieIdFK=" + movieHolder.getMovieId() + "]";
 	}
 
 }

@@ -1,8 +1,6 @@
 package com.projecttwo;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -48,7 +46,7 @@ public class MainDriver {
 		
 		logger.setLevel(Level.FATAL);
 		
-//		insertInitialValues();
+		insertInitialValues();
 		
 //		System.err.println("Selecting by ID");
 //		System.err.println(movieDao.selectById(1));
@@ -68,15 +66,21 @@ public class MainDriver {
 //		ShowingSeat showingSeat = new ShowingSeat("A3", 2);
 //		seatDao.update(showingSeat);
 //		System.out.println(userDao.getUserByUsername("cjf"));
+		
+		
+		
+		System.out.println(purchaseDao.selectAll());
+		System.out.println(purchaseDao.selectAllByUser(userDao.getUserByUsername("liam").getUserId()));
+		
 	}
 	
 	public static void insertInitialValues() {
 		Timestamp timeStamp = new Timestamp(System.currentTimeMillis());
 		
 		//Movie
-		Movie movie1 = new Movie("Tyler Perry: Black Don't Crack", "Another stupid TP movie for yall to think is funny.", 103);
-		Movie movie2 = new Movie("Naruto Live Action", "Better than AirBender Live Action but still bad", 86);
-		Movie movie3 = new Movie("Django: Flees the South", "Django kills more white people while running to the North", 124);
+		Movie movie1 = new Movie("Tyler Perry: Black Don't Crack", "Another stupid TP movie for yall to think is funny.", 103, "");
+		Movie movie2 = new Movie("Naruto Live Action", "Better than AirBender Live Action but still bad", 86, "");
+		Movie movie3 = new Movie("Django: Flees the South", "Django kills more white people while running to the North", 124, "");
 		
 		//Showing
 		Showing showing1 = new Showing(timeStamp);
@@ -95,18 +99,36 @@ public class MainDriver {
 		ShowingSeat seat9 = new ShowingSeat("I9", 2);
 		ShowingSeat seat10 = new ShowingSeat("A2", 0);
 		
-		//Purchase
-		Purchase purchase1 = new Purchase(12.99);
-		Purchase purchase2 = new Purchase(8.99);
-		Purchase purchase3 = new Purchase(12.99);
-		Purchase purchase4 = new Purchase(6.99);
-		
-		
 		//User
 		Users user1 = new Users("cjf", "7777", "Christian", "Falzone", "c@gmail.com");
-		Users user2 = new Users("serg", "berg", "Sergio", "Gamboa", "s@yahoo.com");
-		Users user3 = new Users("liam", "taken", "Liam", "Converse", "l@revature.com");
+		userDao.insertUser(user1); 			
 		
+		
+		Users user2 = new Users("serg", "berg", "Sergio", "Gamboa", "s@yahoo.com");
+		userDao.insertUser(user2);	
+		
+
+		Users user3 = new Users("liam", "taken", "Liam", "Converse", "l@revature.com");
+		userDao.insertUser(user3);
+		
+		//Purchase
+		Purchase purchase1 = new Purchase(12.99, user1);
+		user1.getpList().add(purchase1);
+		Purchase purchase2 = new Purchase(8.99, user1);
+		user1.getpList().add(purchase2);
+		Purchase purchase3 = new Purchase(12.99, user1);
+		user1.getpList().add(purchase3);
+		Purchase purchase4 = new Purchase(6.99, user3);
+		user3.getpList().add(purchase4);
+		Purchase purchase5 = new Purchase(12.99, user2);
+		user2.getpList().add(purchase5);
+		Purchase purchase6 = new Purchase(8.99, user2);
+		user2.getpList().add(purchase6);
+		Purchase purchase7 = new Purchase(12.99, user2);
+		user2.getpList().add(purchase7);
+		Purchase purchase8 = new Purchase(6.99, user3);
+		user3.getpList().add(purchase8);
+				
 		//Ticket
 //		Ticket ticket1 = new Ticket();
 		
@@ -127,8 +149,8 @@ public class MainDriver {
 		
 		purchaseDao.insert(purchase1);			purchaseDao.insert(purchase2);
 		purchaseDao.insert(purchase3);			purchaseDao.insert(purchase4);
-		
-		userDao.insertUser(user1); 		userDao.insertUser(user2);		userDao.insertUser(user3);	
+		purchaseDao.insert(purchase5);			purchaseDao.insert(purchase6);
+		purchaseDao.insert(purchase7);			purchaseDao.insert(purchase8);
 		
 		ticketTypeDao.insert(ticketType1);
 		ticketTypeDao.insert(ticketType2);

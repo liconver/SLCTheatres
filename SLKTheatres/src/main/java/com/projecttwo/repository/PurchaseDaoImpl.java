@@ -43,4 +43,31 @@ public class PurchaseDaoImpl /*implements PurchaseDao*/{
 	public List<Purchase> selectAll() {
 		return sesFact.getCurrentSession().createQuery("from Purchase", Purchase.class).list();
 	}
+	
+	public List<Purchase> selectAllByUser(int userId) {
+		List<Purchase> pList = sesFact.getCurrentSession().createQuery("from Purchase where userHolder = '" + userId + "'", Purchase.class).list();
+		if (pList.size() == 0) {
+			System.out.println("Panic");
+			return null;
+		}
+		return pList;
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
