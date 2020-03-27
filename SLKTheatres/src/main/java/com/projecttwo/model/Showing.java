@@ -1,6 +1,7 @@
 package com.projecttwo.model;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -10,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -28,8 +30,8 @@ public class Showing {
 	@JoinColumn(name = "movie_id_FK")
 	private Movie movieHolder;
 	
-	@OneToOne(mappedBy= "showingHolder", fetch = FetchType.EAGER)
-	private ShowingSeat seat;
+	@OneToMany(mappedBy= "showingHolder", fetch = FetchType.EAGER) //
+	private List<ShowingSeat> seat;
 	
 	public Showing() {
 	}
@@ -78,8 +80,7 @@ public class Showing {
 
 	@Override
 	public String toString() {
-		return "Showing [showingId=" + showingId + ", showtime=" + showtime + ", movieIdFK=" + movieHolder.getMovieId() + ", seat="
-				+ seat.getSeatId() + "]";
+		return "Showing [showingId=" + showingId + ", showtime=" + showtime + ", movieIdFK=" + movieHolder.getMovieId() + "]";
 	}
 
 }

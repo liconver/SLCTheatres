@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -19,12 +20,12 @@ public class ShowingSeat {
 	@Column(name = "seat_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int seatId;
-	@Column(name = "seat_name", unique = true, nullable = false)
+	@Column(name = "seat_name", nullable = false)
 	private String seatName;
 	@Column(name = "status")
 	private int status;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "showing_id_FK")
 	private Showing showingHolder;
 	

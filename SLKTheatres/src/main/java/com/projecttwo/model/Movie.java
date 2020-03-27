@@ -1,12 +1,14 @@
 package com.projecttwo.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,8 +28,8 @@ public class Movie {
 	@Column(name = "poster")
 	private String poster;
 	
-	@OneToOne(mappedBy= "movieHolder", fetch = FetchType.EAGER)
-	private Showing showing;
+	@OneToMany(mappedBy= "movieHolder", fetch = FetchType.EAGER)
+	private List<Showing> showing;
 	 
 	
 	public Movie() {
@@ -50,7 +52,7 @@ public class Movie {
 		this.poster = poster;
 	}
 	
-	public Movie(int movieId, String title, String description, int duration, String poster, Showing showing) {
+	public Movie(int movieId, String title, String description, int duration, String poster, List<Showing> showing) {
 		super();
 		this.movieId = movieId;
 		this.title = title;
@@ -92,13 +94,13 @@ public class Movie {
 		this.duration = duration;
 	}
 
-	public Showing getShowing() {
-		return showing;
-	}
-
-	public void setShowing(Showing showing) {
-		this.showing = showing;
-	}
+//	public Showing getShowing() {
+//		return showing;
+//	}
+//
+//	public void setShowing(Showing showing) {
+//		this.showing = showing;
+//	}
 
 	public String getPoster() {
 		return poster;
