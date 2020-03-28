@@ -83,9 +83,9 @@ public class MainDriver {
 		Movie movie3 = new Movie("Django: Flees the South", "Django kills more white people while running to the North", 124, "");
 		
 		//Showing
-		Showing showing1 = new Showing(timeStamp);
-		Showing showing2 = new Showing(timeStamp);
-		Showing showing3 = new Showing(timeStamp);
+		Showing showing1 = new Showing(7,timeStamp);
+		Showing showing2 = new Showing(8,timeStamp);
+		Showing showing3 = new Showing(9,timeStamp);
 		
 		//Seats
 		ShowingSeat seat1 = new ShowingSeat("A1", 0);

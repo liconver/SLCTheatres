@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=C\:\\p2\\projecttwo\\.git;C\:\\Users\\chris\\Documents\\2001jan27_gitbash\\2001-january27-java\\.git;
-GitRepositoriesView.GitDirectories.relative=.git;C\:\\Users\\chris\\Documents\\2001jan27_gitbash\\2001-january27-java\\.git;
+GitRepositoriesView.GitDirectories=C\:\\Users\\chris\\Documents\\2001jan27_gitbash\\2001-january27-java\\.git;C\:\\p2\\branch\\projecttwo\\projecttwo\\.git;C\:\\p2\\branch\\projecttwo\\.git;
+GitRepositoriesView.GitDirectories.relative=C\:\\Users\\chris\\Documents\\2001jan27_gitbash\\2001-january27-java\\.git;.git;C\:\\p2\\branch\\projecttwo\\.git;
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1
