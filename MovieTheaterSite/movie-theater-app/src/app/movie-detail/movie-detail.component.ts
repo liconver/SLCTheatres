@@ -12,6 +12,10 @@ import { MovieService } from '../services/movie.service';
 })
 export class MovieDetailComponent implements OnInit {
   @Input() movie: Movie;
+ // @Input() showing: Showing;
+
+  imagewidth = 400;
+  imagemargin = 2;
 
   constructor(private route: ActivatedRoute,
               private movieService: MovieService,
