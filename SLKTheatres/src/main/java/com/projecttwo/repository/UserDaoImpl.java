@@ -55,6 +55,17 @@ public class UserDaoImpl{
 		return uList.get(0);
 	}
 	
+	public Users getUserByEmail(String email) {
+		
+		uList = sesFact.getCurrentSession().createQuery("from Users where email= '" + email + "'", Users.class).list();
+		
+		if (uList.size() == 0) {
+			System.out.println("No user");
+			return null;
+		}
+		return uList.get(0);
+	}
+	
 	public List<Users> getAllUsers() {
 		return sesFact.getCurrentSession().createQuery("from Users", Users.class).list();	
 	}
