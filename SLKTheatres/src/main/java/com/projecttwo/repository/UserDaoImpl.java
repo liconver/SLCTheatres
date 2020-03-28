@@ -2,6 +2,7 @@ package com.projecttwo.repository;
 
 import java.util.List;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -25,8 +26,18 @@ public class UserDaoImpl{
 		this.sesFact = sesFact;
 	}
 	
-	public void insertUser(Users user) {
-		sesFact.getCurrentSession().save(user);
+	public int insertUser(Users user) {
+		Session session = null;
+		try {
+			session = sesFact.getCurrentSession();
+			int id = (Integer) session.save(user);
+			return id;
+		} catch (Exception e) {
+			System.out.println("exception while saving user " +e.getMessage());
+			return 0;
+		} finally {
+			session.flush();
+		}
 	}
 	
 	public Users getUserById(int userId) {

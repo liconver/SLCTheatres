@@ -2,13 +2,13 @@
 <ngb-carousel style="height: 42rem; max-width: 35rem; margin:auto;">
 <ng-template ngbSlide *ngFor="let movie of movies" >
     <div class="picsum-img-wrapper text-center" style="height: 42rem; max-width: 37.5rem; margin:auto;">
-        <a routerLink="/detail/{{movie.id}}">
+        <a routerLink="/detail/{{movie.movieId}}">
             <img [src]=movie.poster alt="Random first slide" style="height: 33rem; max-width: 37.5rem;">
         </a>
       </div>
       <div class="carousel-caption">
-        <h3>{{movie.name}}</h3>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <h3>{{movie.title}}</h3>
+        <p>{{movie.description}} </p>
       </div>
 </ng-template>
 </ngb-carousel>
@@ -16,12 +16,12 @@
 <div class="grid grid-pad">
     
     <a *ngFor="let movie of movies" class="col-1-4"
-        routerLink="/detail/{{movie.id}}">
+        routerLink="/detail/{{movie.movieId}}">
         
            <!-- <img src="https://www.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2011/10/03/Style/Images/deal1008ticket.tif?t=20170517" 
             style=' height: 100%; width: 100%; object-fit: contain'/>-->
         <div class="container module" style="position: inherit;">
-            <h4>{{movie.name}} </h4>
+            <h4>{{movie.title}} </h4>
         </div>
     
     </a>

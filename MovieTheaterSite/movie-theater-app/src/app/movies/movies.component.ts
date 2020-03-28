@@ -23,7 +23,6 @@ export class MoviesComponent implements OnInit {
 
   getMovies(): void {
     this.movieService.getMovies().subscribe(movies => this.movies = movies);
-
   }
 
 }

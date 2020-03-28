@@ -10,7 +10,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class MovieService {
 
-  private moviesUrl = 'api/movies';
+  private moviesUrl = 'http://localhost:8082/SLKTheatres/api/getmovies.app';
+  private movieIdUrl = 'http://localhost:8082/SLKTheatres/api/getmovie'
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
@@ -19,13 +20,13 @@ export class MovieService {
   }
 
   /** GET movie by id. Will 404 if id not found */
-  getMovie(id: number): Observable<Movie> {
+  getMovie(movieId: number): Observable<Movie> {
     // send the message _after_ fetching the movie
-    this.messageService.add(`MovieService: fetched movie id=${id}`);
-    const url = `${this.moviesUrl}/${id}`;
+    this.messageService.add(`MovieService: fetched movie movieId=${movieId}`);
+    const url = `${this.movieIdUrl}/${movieId}.app`;
     return this.http.get<Movie>(url).pipe(
-      tap(_ => this.log(`fetched movie id=${id}`)),
-      catchError(this.handleError<Movie>(`getMovie id=${id}`))
+      tap(_ => this.log(`fetched movieId=${movieId}`)),
+      catchError(this.handleError<Movie>(`getMovie movieId=${movieId}`))
     );
   }
 
@@ -37,6 +38,7 @@ export class MovieService {
         catchError(this.handleError<Movie[]>('getMovies', []))
       );
   }
+
 
 
   /**

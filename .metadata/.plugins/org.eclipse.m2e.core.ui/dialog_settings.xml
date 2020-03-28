@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\p2\projecttwo"/>
 			<item value="C:\Users\chris\Documents\2001jan27_gitbash\2001-january27-java\Christian_Falzone_Code\SLKTheatres"/>
 		</list>
 		<list key="projectNameTemplate">

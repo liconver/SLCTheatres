@@ -19,15 +19,15 @@ public class LoginService {
 		this.udao = udao;
 	}
 	
-	public boolean loginVerify(String username, String password) {
+	public int loginVerify(String username, String password) {
 		
 		List<Users> userList = udao.getAllUsers();
 		System.out.println("Login Service: getting all users in a list\n" + userList); //for checking
-		boolean verify = false;
+		int verify = -1;
 		
 		for(Users user : userList) {
 			if(user.getUsername().equals(username) && user.getPassword().equals(password)) {
-				verify = true;
+				verify = 1;
 			}
 		}
 		System.out.println("Login Service: after the for loop verify = " + verify);//for checking
@@ -35,7 +35,7 @@ public class LoginService {
 	}
 	
 	public Users loginByUsername(String username, String password) {
-		if(loginVerify(username, password)) {
+		if(loginVerify(username, password)==1) {
 			System.out.println("Login Service: login by username");//for checking
 			return udao.getUserByUsername(username);
 		}

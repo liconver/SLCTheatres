@@ -5,7 +5,6 @@ import { MessageService } from './message.service';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
-import { JwtHelperService } from '@auth0/angular-jwt';
 
 
 
@@ -14,8 +13,8 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class UserService {
 
-  private signupUrl = 'http://localhost:8088/SLKTheatres/api/adduser.app';
-  private loginUrl = 'http://localhost:8088/SLKTheatres/api/loginuser.app';
+  private signupUrl = 'http://localhost:8082/SLKTheatres/api/adduser.app';
+  private loginUrl = 'http://localhost:8082/SLKTheatres/api/loginuser.app';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }
