@@ -1,0 +1,478 @@
+<div class="background">
+
+    <hr style="background-color: white;">
+
+    <h2 style="color: white; margin:0px;">Screen</h2>
+    <br>
+    <div class="screen"></div>
+    <br><br><br><br><br>
+
+    <div *ngIf="isDataAvailable">
+
+
+        <div class="seat-wrapper">
+            <!--="disabled"-->
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[0].selected"
+                        [disabled]="seats[0].taken">{{val[0].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[1].selected"
+                        [disabled]="seats[1].taken">{{val[1].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[2].selected"
+                        [disabled]="seats[2].taken">{{val[2].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[3].selected" [disabled]="seats[3].taken">{{val[3].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[4].selected" [disabled]="seats[4].taken">{{val[4].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[5].selected" [disabled]="seats[5].taken">{{val[5].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[6].selected" [disabled]="seats[6].taken">{{val[6].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[7].selected" [disabled]="seats[7].taken">{{val[7].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[8].selected" [disabled]="seats[8].taken">{{val[8].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[9].selected" [disabled]="seats[9].taken">{{val[9].seatName}}
+                </label>
+            </div>
+
+
+        </div>
+
+        <div class="seat-wrapper">
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[10].selected" [disabled]="seats[10].taken">{{val[10].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[11].selected" [disabled]="seats[11].taken">{{val[11].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[12].selected" [disabled]="seats[12].taken">{{val[12].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[13].selected" [disabled]="seats[13].taken">{{val[13].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[14].selected" [disabled]="seats[14].taken">{{val[14].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[15].selected" [disabled]="seats[15].taken">{{val[15].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[16].selected" [disabled]="seats[16].taken">{{val[16].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[17].selected" [disabled]="seats[17].taken">{{val[17].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[18].selected" [disabled]="seats[18].taken">{{val[18].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[19].selected" [disabled]="seats[19].taken">{{val[19].seatName}}
+                </label>
+            </div>
+
+
+        </div>
+
+        <div class="seat-wrapper">
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[20].selected" [disabled]="seats[20].taken">{{val[20].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[21].selected" [disabled]="seats[21].taken">{{val[21].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[22].selected" [disabled]="seats[22].taken">{{val[22].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[23].selected" [disabled]="seats[23].taken">{{val[23].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[24].selected" [disabled]="seats[24].taken">{{val[24].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[25].selected" [disabled]="seats[25].taken">{{val[25].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[26].selected" [disabled]="seats[26].taken">{{val[26].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[27].selected" [disabled]="seats[27].taken">{{val[27].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[28].selected" [disabled]="seats[28].taken">{{val[28].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[29].selected" [disabled]="seats[29].taken">{{val[29].seatName}}
+                </label>
+            </div>
+
+
+        </div>
+
+        <div class="seat-wrapper">
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[30].selected" [disabled]="seats[30].taken">{{val[30].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[31].selected" [disabled]="seats[31].taken">{{val[31].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[32].selected" [disabled]="seats[32].taken">{{val[32].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[33].selected" [disabled]="seats[33].taken">{{val[33].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[34].selected" [disabled]="seats[34].taken">{{val[34].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[35].selected" [disabled]="seats[35].taken">{{val[35].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[36].selected" [disabled]="seats[36].taken">{{val[36].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[37].selected" [disabled]="seats[37].taken">{{val[37].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[38].selected" [disabled]="seats[38].taken">{{val[38].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[39].selected" [disabled]="seats[39].taken">{{val[39].seatName}}
+                </label>
+            </div>
+
+
+        </div>
+
+        <div class="seat-wrapper">
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[40].selected" [disabled]="seats[40].taken">{{val[40].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[41].selected" [disabled]="seats[41].taken">{{val[41].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[42].selected" [disabled]="seats[42].taken">{{val[42].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[43].selected" [disabled]="seats[43].taken">{{val[43].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[44].selected" [disabled]="seats[44].taken">{{val[44].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[45].selected" [disabled]="seats[45].taken">{{val[45].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[46].selected" [disabled]="seats[46].taken">{{val[46].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[47].selected" [disabled]="seats[47].taken">{{val[47].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-blank">
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[48].selected" [disabled]="seats[48].taken">{{val[48].seatName}}
+                </label>
+            </div>
+
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="seats[49].selected" [disabled]="seats[49].taken">{{val[49].seatName}}
+                </label>
+            </div>
+
+
+        </div>
+    </div>
+
+    <br><br>
+
+    <div *ngIf="isDataAvailable">
+        <div class="seat-wrapper">
+        </div>
+    </div>
+
+    <br><br>
+
+    <hr style="background-color: white;">
+
+    <div class="btn-group btn-group-toggle">
+        <label class="btn-secondary" ngbButtonLabel style="background-color: #0d6efd;">
+            <input type="checkbox" ngbButton [(ngModel)]="checkout.btn" (click)="sendSeats()" routerLink="/checkout">
+            Checkout
+        </label>
+    </div>
+
+    <br><br>
+
+</div>
+<!-- 
+<button (click)="sendGetRequest()">Get</button>
+
+<button (click)="sendPostRequest()">Post</button> -->
+<!-- <div style="color: white;" *ngFor= "let post of posts | async">
+{{post | json}}
+
+</div> -->
+
+
+
+
+
+
+
+
+<!-- <hr>
+<pre style="color: white;">{{ checkout | json}}</pre>
+
+<pre style="color: white;">{{ seats | json}}</pre> -->

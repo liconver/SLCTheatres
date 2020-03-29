@@ -29,11 +29,13 @@ public class ShowingSeatController {
 	
 	@GetMapping(value="/seats.app")
 	public @ResponseBody List<ShowingSeat> getSeats() {
+		System.out.println("in s");
 		return ssServ.getSeats();
 	}
 	
 	@GetMapping(value="/seatsshowing.app")
 	public @ResponseBody List<ShowingSeat> getSeatsFromShowing( @RequestParam("id") int id ) {
+		System.out.println("in ss");
 		return ssServ.getSeatsFromShowing(id);
 	}
 	

@@ -46,7 +46,7 @@ public class MainDriver {
 		
 		logger.setLevel(Level.FATAL);
 		
-		insertInitialValues();
+//		insertInitialValues();
 		
 //		System.err.println("Selecting by ID");
 //		System.err.println(movieDao.selectById(1));

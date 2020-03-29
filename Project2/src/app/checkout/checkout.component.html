@@ -1,0 +1,39 @@
+<div style="text-align: center;">
+    <hr style="background-color: white;">
+    <h2 style="color: white;">Checkout</h2>
+    <hr style="background-color: white;">
+
+    <h3 style="color: white;">You have selected seat(s):</h3>
+    <div></div>
+    <br><br>
+
+    <!-- <ul> -->
+    <div *ngFor="let ticket of out" style="color: white;">
+
+        Ticket for seat number: {{ ticket.seat.seatName }}
+
+        <!-- <h1>Current title: {{ticket.type}}</h1> -->
+        <div class="column small-12 large-2">
+            <label class="sbw_light">Ticket type:  </label>
+            <select [(ngModel)]="ticket.type" type="ticket.type">
+                <option *ngFor="let title of titleArray" [value]="title.Value">
+                    {{title.Text}}
+                </option>
+            </select>
+        </div>
+        <br>
+
+    </div>
+
+    <br>
+    <hr style="background-color: white;">
+    <div class="btn-group btn-group-toggle">
+        <label class="btn-secondary" ngbButtonLabel style="background-color: #0d6efd;">
+            <input type="checkbox" ngbButton (click)="purchaseTickets()" > Purchase
+            <!--[(ngModel)]="checkout.btn" -->
+        </label>
+    </div>
+
+    <br><br>
+
+</div>

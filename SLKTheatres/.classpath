@@ -18,12 +18,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
-		<attributes>
-			<attribute name="test" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
@@ -48,9 +42,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="C:/Users/chris/Documents/2001jan27_gitbash/ProjectTwoUpdate/projecttwo/activation.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/chris/Documents/2001jan27_gitbash/ProjectTwoUpdate/projecttwo/javax.mail-1.6.2-javadoc.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/chris/Documents/2001jan27_gitbash/ProjectTwoUpdate/projecttwo/mail.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/sergi/Desktop/HELP US2/projecttwo/activation.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/sergi/Desktop/HELP US2/projecttwo/javax.mail-1.6.2-javadoc.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/sergi/Desktop/HELP US2/projecttwo/mail.jar"/>
 	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
 		<attributes>
 			<attribute name="optional" value="true"/>
