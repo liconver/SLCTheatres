@@ -1,11 +1,14 @@
 package com.projecttwo.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -22,8 +25,8 @@ public class TicketType {
 	@Column(name="Price")
 	private Double price;
 	
-	@OneToOne(mappedBy= "ticketTypeHolder", fetch = FetchType.EAGER)
-	private Ticket ticket;
+	@OneToMany(mappedBy= "ticketTypeHolder", fetch = FetchType.EAGER)
+	private List<Ticket> ticket;
 	
 	public TicketType() {
 		super();
