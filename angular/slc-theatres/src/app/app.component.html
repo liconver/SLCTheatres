@@ -1,0 +1,15 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode= "side" [(opened)]= "opened">User Features
+    <app-log-in></app-log-in>
+    <button mat-fab color="warn" (click)="sidenav.toggle()">Close</button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class= "navbar" color="primary">
+      <div>
+        <button mat-fab color="warn">{{title}}</button>
+        <button mat-raised-button color="primary" (click)= "opened=!opened">User Features</button>
+      </div>
+      <app-navbar></app-navbar>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
