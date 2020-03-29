@@ -8,3 +8,5 @@ body {
 h1 {
   font-size: 300%;
   }
+html, body { height: 100%; }
+
