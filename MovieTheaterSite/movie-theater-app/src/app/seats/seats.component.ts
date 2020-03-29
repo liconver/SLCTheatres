@@ -53,7 +53,8 @@ export class SeatsComponent implements OnInit {
 
   async getSeatsRequest() {
     return await new Promise((resolve, reject) => {
-      this.httpClient.get(this.ROOT_URL + "?id=" + 7).subscribe((val) => {
+      const showingId = +this.route.snapshot.paramMap.get('showingId');
+      this.httpClient.get(this.ROOT_URL + "?id=" + showingId).subscribe((val) => {
         this.val = val;
         console.log("This is my data: ");
         console.log(this.val);
