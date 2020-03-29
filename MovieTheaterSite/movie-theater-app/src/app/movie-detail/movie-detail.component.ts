@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { MovieService } from '../services/movie.service';
+import { ShowingService } from '../services/showing.service';
+import { Showing } from '../showing';
 
 @Component({
   selector: 'app-movie-detail',
@@ -12,17 +14,19 @@ import { MovieService } from '../services/movie.service';
 })
 export class MovieDetailComponent implements OnInit {
   @Input() movie: Movie;
- // @Input() showing: Showing;
+  @Input() showings: Showing[];
 
   imagewidth = 400;
   imagemargin = 2;
 
-  constructor(private route: ActivatedRoute,
+  constructor(private showingService: ShowingService,
+              private route: ActivatedRoute,
               private movieService: MovieService,
               private location: Location) { }
 
   ngOnInit(): void {
     this.getMovie();
+    this.getShowings();
   }
 
   goBack(): void {
@@ -32,6 +36,11 @@ export class MovieDetailComponent implements OnInit {
   getMovie(): void {
     const movieId = +this.route.snapshot.paramMap.get('movieId');
     this.movieService.getMovie(movieId).subscribe( movie => this.movie = movie);
+  }
+
+  getShowings(): void {
+    const movieId = +this.route.snapshot.paramMap.get('movieId');
+    this.showingService.getShowings(movieId).subscribe( showings => this.showings = showings);
   }
 
 }

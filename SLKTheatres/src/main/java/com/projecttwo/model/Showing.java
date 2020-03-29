@@ -25,7 +25,7 @@ public class Showing {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int showingId;
 	@Column(name = "showtime", nullable = false)
-	private Timestamp showtime;
+	private String showtime;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "movie_id_FK")
@@ -37,18 +37,18 @@ public class Showing {
 	public Showing() {
 	}
 
-	public Showing(int showingId, Timestamp showtime) {
+	public Showing(int showingId, String showtime) {
 		super();
 		this.showingId = showingId;
 		this.showtime = showtime;
 	}
 	
-	public Showing(Timestamp showtime) {
+	public Showing(String showtime) {
 		super();
 		this.showtime = showtime;
 	}
 	
-	public Showing(int showingId, Timestamp showtime, Movie movieHolder) {
+	public Showing(int showingId, String showtime, Movie movieHolder) {
 		super();
 		this.showingId = showingId;
 		this.showtime = showtime;
@@ -63,11 +63,11 @@ public class Showing {
 		this.showingId = showingId;
 	}
 
-	public Timestamp getShowtime() {
+	public String getShowtime() {
 		return showtime;
 	}
 
-	public void setShowtime(Timestamp showtime) {
+	public void setShowtime(String showtime) {
 		this.showtime = showtime;
 	}
 

@@ -886,3 +886,9 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-28 13:25:17.145
 !MESSAGE executing callback sts4.classpath.aJRnSFBu SUCCESS [done]
+
+!ENTRY org.eclipse.ui 2 2 2020-03-28 13:45:48.224
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.eclipse.recommenders.models.rcp 1 0 2020-03-28 18:30:45.063
+!MESSAGE org.eclipse.recommenders:index::zip:0.0.0 could not be resolved from the model repositories. Are you offline?

@@ -75,18 +75,18 @@ public class MainDriver {
 	}
 	
 	public static void insertInitialValues() {
-		Timestamp timeStamp = new Timestamp(System.currentTimeMillis());
 		
+		/*
 		//Movie
 		Movie movie1 = new Movie("Tyler Perry: Black Don't Crack", "Another stupid TP movie for yall to think is funny.", 103, "");
 		Movie movie2 = new Movie("Naruto Live Action", "Better than AirBender Live Action but still bad", 86, "");
 		Movie movie3 = new Movie("Django: Flees the South", "Django kills more white people while running to the North", 124, "");
 		
 		//Showing
-		Showing showing1 = new Showing(timeStamp);
-		Showing showing2 = new Showing(timeStamp);
-		Showing showing3 = new Showing(timeStamp);
-		
+		Showing showing1 = new Showing(1, "March 28 1pm");
+		Showing showing2 = new Showing(2, "March 28 3pm");
+		Showing showing3 = new Showing(3, "March 28 4pm");
+		*/
 		//Seats
 		ShowingSeat seat1 = new ShowingSeat("A1", 0);
 		ShowingSeat seat2 = new ShowingSeat("B2", 0);
@@ -139,9 +139,6 @@ public class MainDriver {
 		
 		
 ///////////Inserts///////////////
-		movieDao.insert(movie1);	movieDao.insert(movie2);	movieDao.insert(movie3);
-		
-		showingDao.insert(showing1);	showingDao.insert(showing2);	showingDao.insert(showing3);
 		
 		seatDao.insert(seat1);	seatDao.insert(seat2);	seatDao.insert(seat3);	seatDao.insert(seat4);
 		seatDao.insert(seat5);	seatDao.insert(seat6);	seatDao.insert(seat7);	seatDao.insert(seat8);

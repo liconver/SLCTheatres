@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.projecttwo.model.Showing;
+import com.projecttwo.model.ShowingSeat;
 
 @Transactional
 @Repository("showingDao")
@@ -42,5 +43,9 @@ public class ShowingDaoImpl /*implements ShowingDao*/ {
 
 	public List<Showing> selectAll() {
 		return sesFact.getCurrentSession().createQuery("from Showing", Showing.class).list();
+	}
+	
+	public List<Showing> selectShowingsMovie(int id) {
+		return sesFact.getCurrentSession().createQuery("from Showing where movie_id_fk = " + id, Showing.class).list();
 	}
 }

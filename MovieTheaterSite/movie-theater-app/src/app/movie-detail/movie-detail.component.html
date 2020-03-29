@@ -1,9 +1,9 @@
 <div class="container" style="margin: auto;">
 <div *ngIf="movie">
-    <br>
+    <div class="container text-center" style="margin: 1rem;">
     <h2>{{movie.title | uppercase }} Showtimes</h2>
-    <span>  {{movie.description}}</span>
-        <br>
+    <span >  {{movie.description}}</span>
+    </div>
         <div class="container" style="margin: auto; width: 25rem;">
         <img [src]=movie.poster [style.width.px]='imagewidth' [style.margin.px]='imagemargin' align="middle">
         </div>
@@ -12,14 +12,14 @@
     <div class="container" style="margin: auto; width: 30rem;">
     <div class="list-group">
         <a class="list-group-item list-group-item-action active">Choose a Showtime for : {{movie.title}}</a>
-        <!--<a *ngFor="let showing of showings" routerLink='' class="list-group-item list-group-item-action"> </a>-->
-        <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+        <a *ngFor="let showing of showings" routerLink='' class="list-group-item list-group-item-action"> {{showing.showtime}}</a>
+        <!--<a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>-->
     </div>
     </div>
 
-    <div>
+    <!--<div>
         <button type="button" class="btn btn-light" [value]="movie.title" style="margin: 1rem;" >Buy Tickets to see {{movie.title}}</button>
-    </div>
+    </div>-->
     <button (click)="goBack()" class="btn btn-light"style="margin: 1rem;">go back</button>
  </div>
 </div>
