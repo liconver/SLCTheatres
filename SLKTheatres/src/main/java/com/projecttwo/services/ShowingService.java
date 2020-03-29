@@ -23,5 +23,9 @@ public class ShowingService {
 	public List<Showing> getShowings(int id) {
 		return sD.selectShowingsMovie(id);
 	}
+	
+	public Showing getMovieById(int id) {
+		return sD.selectById(id);
+	}
 
 }

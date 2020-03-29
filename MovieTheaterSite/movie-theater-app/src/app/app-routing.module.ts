@@ -11,7 +11,7 @@ import {CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent},
-  { path: 'seats', component: SeatsComponent},
+  { path: 'seats/:showingId', component: SeatsComponent},
   { path: 'movies', component: MoviesComponent },
   {path: 'dashboard', component: DashboardComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},

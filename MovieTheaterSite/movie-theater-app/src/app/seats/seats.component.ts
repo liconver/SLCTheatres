@@ -1,6 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SeatDataService } from '../seat-data.service';
 import { HttpClient } from '@angular/common/http';
+import { ShowingService } from '../services/showing.service';
+import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { Showing } from '../showing';
+
 
 @Component({
   selector: 'app-seats',
@@ -8,6 +13,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./seats.component.css']
 })
 export class SeatsComponent implements OnInit {
+  //Seats component retrieves a showing object from the database
+  @Input() showing: Showing;
+
   SHOWING_ID: number = 7;
   readonly ROOT_URL = "http://localhost:8082/SLKTheatres/seatapi/seatsshowing.app";
   posts: any;
@@ -21,7 +29,8 @@ export class SeatsComponent implements OnInit {
   };
 
   seats = [];
-  constructor(private data: SeatDataService, private httpClient: HttpClient) { }
+  constructor(private showingService: ShowingService, private data: SeatDataService, 
+              private httpClient: HttpClient, private route: ActivatedRoute) { }
 
   sendSeats() {
 
@@ -62,12 +71,17 @@ export class SeatsComponent implements OnInit {
 
   ngOnInit() {
     this.setUpSeatSelected();
-
+    this.getShowing();
     this.getSeatsRequest().then(() => {
       this.setUpSeatData();
       this.isDataAvailable = true;
     });
 
+  }
+
+  getShowing(): void {
+    const showingId = +this.route.snapshot.paramMap.get('showingId');
+    this.showingService.getShowing(showingId).subscribe( showing => this.showing = showing);
   }
 
   setUpSeatSelected() { //here we want to se

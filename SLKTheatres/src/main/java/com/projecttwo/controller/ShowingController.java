@@ -32,4 +32,10 @@ public class ShowingController {
 		System.out.println("in getShowingsByMovie, id= "+id);
 		return showingService.getShowings(id);
 	}
+	
+	@RequestMapping(value = "/getshowing/{showing_id}", method=RequestMethod.GET) 
+	public Showing getShowingById(@PathVariable("showing_id") int id) {
+		System.out.println("in getShowingById, id= "+id);
+		return showingService.getMovieById(id);
+	}
 }

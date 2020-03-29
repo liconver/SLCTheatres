@@ -11,6 +11,8 @@ import { catchError, tap } from 'rxjs/operators';
 export class ShowingService {
 
   private showingsUrl = 'http://localhost:8082/SLKTheatres/api/getshowings';
+  private showingUrl = 'http://localhost:8082/SLKTheatres/api/getshowing';
+
   constructor(private http: HttpClient, private messageService: MessageService ) { }
 
 
@@ -23,6 +25,17 @@ export class ShowingService {
     return this.http.get<Showing[]>(url).pipe(
       tap(_ => this.log(`fetched showings movieId=${movieId}`)),
       catchError(this.handleError<Showing[]>(`getShowings movieId=${movieId}`))
+    );
+  }
+
+  /** GET showing by showingid. Will 404 if id not found */
+  getShowing(showingId: number): Observable<Showing> {
+    // send the message _after_ fetching the movie
+    this.messageService.add(`ShowingService: fetched showing showingId=${showingId}`);
+    const url = `${this.showingUrl}/${showingId}.app`;
+    return this.http.get<Showing>(url).pipe(
+      tap(_ => this.log(`fetched movieId=${showingId}`)),
+      catchError(this.handleError<Showing>(`getMovie movieId=${showingId}`))
     );
   }
 
