@@ -96,7 +96,7 @@ export class CheckoutComponent implements OnInit {
     console.log(this.message.length);
     for (let i = 0; i < this.list.length; i++) {
       // this.out.push({ seat: this.list[i], type: "Adult" });
-      this.out.push(new Out(this.list[i].seatId, "Adult"));
+      this.out.push(new Out(this.list[i].seatId, "Adult", this.list[i].seatName));
     }
     console.log("my out ");
     console.log(this.out);
@@ -109,5 +109,5 @@ export class TicketTypes {
 }
 
 export class Out {
-  constructor(public seat: number, public type: string) { }
+  constructor(public seat: number, public type: string, public name:string) { }
 }

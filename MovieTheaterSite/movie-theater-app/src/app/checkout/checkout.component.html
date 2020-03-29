@@ -3,14 +3,14 @@
     <h2 style="color: white;">Checkout</h2>
     <hr style="background-color: white;">
 
-    <h3 style="color: white;">You have selected seat(s):</h3>
+    <h3 style="color: white;">You have selected:</h3>
     <div></div>
     <br><br>
 
     <!-- <ul> -->
     <div *ngFor="let ticket of out" style="color: white;">
 
-        Ticket for seat number: {{ ticket.seat.seatName }}
+        Ticket for seat: {{ ticket.name }}
 
         <!-- <h1>Current title: {{ticket.type}}</h1> -->
         <div class="column small-12 large-2">
