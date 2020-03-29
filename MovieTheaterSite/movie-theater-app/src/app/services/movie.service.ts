@@ -10,8 +10,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class MovieService {
 
-  private moviesUrl = 'http://localhost:8082/SLKTheatres/api/getmovies.app';
-  private movieIdUrl = 'http://localhost:8082/SLKTheatres/api/getmovie'
+  private moviesUrl = 'http://localhost:8080/SLKTheatres/api/getmovies.app';
+  private movieIdUrl = 'http://localhost:8080/SLKTheatres/api/getmovie'
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 

@@ -13,8 +13,8 @@ import { catchError, tap } from 'rxjs/operators';
 })
 export class UserService {
 
-  private signupUrl = 'http://localhost:8082/SLKTheatres/api/adduser.app';
-  private loginUrl = 'http://localhost:8082/SLKTheatres/api/loginuser.app';
+  private signupUrl = 'http://localhost:8080/SLKTheatres/api/adduser.app';
+  private loginUrl = 'http://localhost:8080/SLKTheatres/api/loginuser.app';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }

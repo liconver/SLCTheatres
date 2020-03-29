@@ -59,6 +59,6 @@ public class ShowingSeatDaoImpl /*implements ShowingSeatDao*/{
 	}
 	
 	public List<ShowingSeat> selectAllFromShowing(int id) {
-		return sesFact.getCurrentSession().createQuery("from ShowingSeat where showing_id_fk = " + id, ShowingSeat.class).list();
+		return sesFact.getCurrentSession().createQuery("from ShowingSeat where showing_id_fk = " + id + "order by seat_id asc", ShowingSeat.class).list();
 	}
 }

@@ -17,7 +17,7 @@ export class SeatsComponent implements OnInit {
   @Input() showing: Showing;
 
   SHOWING_ID: number = 7;
-  readonly ROOT_URL = "http://localhost:8082/SLKTheatres/seatapi/seatsshowing.app";
+  readonly ROOT_URL = "http://localhost:8080/SLKTheatres/seatapi/seatsshowing.app";
   posts: any;
   val: any;
   isDataAvailable: boolean = false;

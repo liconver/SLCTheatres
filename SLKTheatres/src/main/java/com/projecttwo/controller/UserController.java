@@ -18,53 +18,50 @@ import com.projecttwo.model.Users;
 import com.projecttwo.services.LoginService;
 import com.projecttwo.services.UserService;
 
+@RestController("UserController")
+@RequestMapping("/api")
+@CrossOrigin("*")
+public class UserController {
 
-	
-	@RestController("UserController")
-	@RequestMapping("/api")
-	@CrossOrigin("*")
-	public class UserController {
-		
-		UserService userService;
-		LoginService loginService;
-		
-		public UserController() {
-			
-		}
-		
-		@Autowired
-		public UserController(UserService uservice, LoginService lservice) {
-			this.userService=uservice;
-			this.loginService=lservice;
-		}
-		
-		@RequestMapping(value = "/adduser", method=RequestMethod.POST, headers="Accept=application/json") 
-		public int addUser(@RequestBody Users user) {
-			System.out.println("in addUser, received: "+user);
-			return userService.addUser(user);
-		}
-		
-		
-		@PostMapping(value= "/loginuser")
-		public ResponseEntity<Integer> loginUser(@RequestBody Users user) {
-			 int status;  
-		        HttpHeaders httpHeader = null;  
-		      
-		        // Authenticate User.  
-		        status = loginService.loginVerify(user.getUsername(), user.getPassword());  
-		          
-		        /* 
-		         * If User is authenticated then Do Authorization Task. 
-		         */  
-		        if (status > 0)   
-		        {  
-		            /* 
-		             * Generate token. 
-		             */  
-		           // String tokenData[] = generateToken.createJWT(adminDetail.getEmailId(), "JavaTpoint", "JWT Token",  
-		             //       adminDetail.getRole(), 43200000);  
-		              
-		            // get Token.  
+	UserService userService;
+	LoginService loginService;
+
+	public UserController() {
+
+	}
+
+	@Autowired
+	public UserController(UserService uservice, LoginService lservice) {
+		this.userService = uservice;
+		this.loginService = lservice;
+	}
+
+	@RequestMapping(value = "/adduser", method = RequestMethod.POST, headers = "Accept=application/json")
+	public int addUser(@RequestBody Users user) {
+		System.out.println("in addUser, received: " + user);
+		return userService.addUser(user);
+	}
+
+	@PostMapping(value = "/loginuser")
+	public ResponseEntity<Integer> loginUser(@RequestBody Users user) {
+		int status;
+		HttpHeaders httpHeader = null;
+
+		// Authenticate User.
+		status = loginService.loginVerify(user.getUsername(), user.getPassword());
+
+		/*
+		 * If User is authenticated then Do Authorization Task.
+		 */
+		if (status > 0) {
+			/*
+			 * Generate token.
+			 */
+			// String tokenData[] = generateToken.createJWT(adminDetail.getEmailId(),
+			// "JavaTpoint", "JWT Token",
+			// adminDetail.getRole(), 43200000);
+
+			// get Token.
 //		            String token = tokenData[0];  
 //		              
 //		            System.out.println("Authorization :: " + token);  
@@ -92,19 +89,14 @@ import com.projecttwo.services.UserService;
 //		            }  
 //		  
 //		            return new ResponseEntity<Integer>(status, httpHeader, HttpStatus.OK);  
-		            return new ResponseEntity<Integer>(status,HttpStatus.OK);
-		        }   
-		          
-		        // if not authenticated return  status what we get.  
-		        else   
-		        {  
-//		            return new ResponseEntity<Integer>(status, httpHeader, HttpStatus.OK);  
-		        	return new ResponseEntity<Integer>(status, HttpStatus.OK);
-		        }  
-		          
-		
-	
+			return new ResponseEntity<Integer>(status, HttpStatus.OK);
 		}
-}
 
-		
+		// if not authenticated return status what we get.
+		else {
+//		            return new ResponseEntity<Integer>(status, httpHeader, HttpStatus.OK);  
+			return new ResponseEntity<Integer>(status, HttpStatus.OK);
+		}
+
+	}
+}

@@ -18,9 +18,10 @@
 	<bean id= "dataSource" class= "org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name= "driverClassName" value= "org.postgresql.Driver"></property>
 		<!-- <property name= "username" value= "#{systemEnvironment['enritonemetnVariableName']}"></property> -->
-		<property name= "url" value= "jdbc:postgresql://revature-training.c8m2432hgexo.us-east-2.rds.amazonaws.com:5432/project2db"></property>
-		<property name = "username" value= "project2user"></property>
-		<property name = "password" value= "Pa$$w0rd"></property>
+		<property name= "url" value= "jdbc:postgresql://revaturetraining.cumawc6us6c2.us-east-2.rds.amazonaws.com:5432/theatredb"></property>
+		<property name = "username" value= "theatreuser"></property>
+		<property name = "password" value= "password"></property>
+
 	</bean>
 	<bean id= "sessionFactory" class= "org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name= "dataSource" ref= "dataSource"></property>
@@ -30,7 +31,7 @@
 				<prop key= "hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
 				<prop key= "hibernate.show_sql">true</prop>
 				<prop key= "hibernate.format_sql">false</prop>
-				<prop key= "hibernate.hbm2ddl.auto">update</prop>
+				<prop key= "hibernate.hbm2ddl.auto">create</prop>
 			</props>
 		</property>
 	</bean>

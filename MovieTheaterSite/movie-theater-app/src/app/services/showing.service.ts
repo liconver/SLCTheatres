@@ -10,8 +10,8 @@ import { catchError, tap } from 'rxjs/operators';
 })
 export class ShowingService {
 
-  private showingsUrl = 'http://localhost:8082/SLKTheatres/api/getshowings';
-  private showingUrl = 'http://localhost:8082/SLKTheatres/api/getshowing';
+  private showingsUrl = 'http://localhost:8080/SLKTheatres/api/getshowings';
+  private showingUrl = 'http://localhost:8080/SLKTheatres/api/getshowing';
 
   constructor(private http: HttpClient, private messageService: MessageService ) { }
 
