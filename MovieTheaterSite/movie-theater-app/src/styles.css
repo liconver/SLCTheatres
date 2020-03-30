@@ -7,6 +7,8 @@ body {
 
 h1 {
   font-size: 300%;
+  color: red;
+  font-weight: bold;
   }
 html, body { height: 100%; }
 

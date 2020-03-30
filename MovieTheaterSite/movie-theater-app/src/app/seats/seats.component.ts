@@ -17,12 +17,14 @@ export class SeatsComponent implements OnInit {
   @Input() showing: Showing;
 
   SHOWING_ID: number = 7;
+  //readonly ROOT_URL = "http://localhost:9025/seatapi/seatsshowing.app";
   readonly ROOT_URL = "http://localhost:8082/SLKTheatres/seatapi/seatsshowing.app";
   posts: any;
   val: any;
   isDataAvailable: boolean = false;
   seatService: SeatDataService = new SeatDataService;
   selected: number[] = [];
+  isLoggedIn;
 
   checkout = {
     btn: false,
@@ -31,6 +33,10 @@ export class SeatsComponent implements OnInit {
   seats = [];
   constructor(private showingService: ShowingService, private data: SeatDataService, 
               private httpClient: HttpClient, private route: ActivatedRoute) { }
+
+ readLocalStorageValue(key) {
+    return localStorage.getItem(key);
+  }
 
   sendSeats() {
 
@@ -78,6 +84,12 @@ export class SeatsComponent implements OnInit {
       this.isDataAvailable = true;
     });
 
+    this.isLoggedIn = this.readLocalStorageValue('token');
+    console.log(this.isLoggedIn);
+  }
+
+  tellToLogIn(){
+    alert("Log in before you make a purchase");
   }
 
   getShowing(): void {

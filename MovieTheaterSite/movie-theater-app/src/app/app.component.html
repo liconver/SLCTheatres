@@ -7,8 +7,14 @@
      <li class="nav-item" >
            <a routerLink="/movies" class="nav-link active" >Movies</a>
      </li>
-     <li class="nav-item" >
-          <a routerLink="/login" class="nav-link active" >Login/Sign-up</a>
+     <li class="nav-item" *ngIf="status ==null" >
+          <a routerLink="/login" class="nav-link active"  >Login/Sign-up</a>
+     </li>
+     <li class="nav-item" *ngIf="status!=null" >
+          <a routerLink="/" class="nav-link active" >View Past Puchases</a>
+     </li>
+     <li class="nav-item" *ngIf="status!=null" >
+          <a routerLink="/" (click)= "this.logout()" class="nav-link active" >Logout</a>
      </li>
 </nav>
 </div>

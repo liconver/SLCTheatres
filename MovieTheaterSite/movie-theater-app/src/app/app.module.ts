@@ -17,8 +17,6 @@ import { HttpClientModule } from '@angular/common/http';
 //import { InMemoryDataService }  from './services/in-memory-data.service';
 import { SignupComponent } from './signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material/material.module';
-import { NavbarComponent } from './navbar/navbar.component';
 import { SeatsComponent } from './seats/seats.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 
@@ -32,12 +30,11 @@ import { CheckoutComponent } from './checkout/checkout.component';
     DashboardComponent,
     LogInComponent,
     SignupComponent,
-    NavbarComponent,
+
     SeatsComponent,
     CheckoutComponent
   ],
   imports: [
-    MaterialModule,
     BrowserModule,
     ReactiveFormsModule,
     NgbModule,

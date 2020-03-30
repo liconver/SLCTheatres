@@ -4,9 +4,7 @@ import { User } from '../user';
 import { MessageService } from './message.service';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-
-
-
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +21,7 @@ export class UserService {
     )
   };
 
-  constructor(private http: HttpClient, private messageService: MessageService) { }
+  constructor(private router: Router, private http: HttpClient, private messageService: MessageService) { }
   
   private log(message: string) {
     this.messageService.add(`UserService: ${message}`);
@@ -49,6 +47,26 @@ export class UserService {
   /** POST login attempt  */
   loginUser(user: User): Observable<any> {
     return this.http.post(this.loginUrl, user);
+  }
+
+  logout() {
+    // Remove the token from the localStorage.  
+    localStorage.removeItem('token');
+
+    this.router.navigate(['']);
+
+  }
+
+  isLoggedIn() {
+
+    // get the token from the localStorage as we have to work on this token.  
+    let token = localStorage.getItem('token');
+
+    // check whether if token have something or it is null.  
+    if (!token) {
+      return false;
+    }
+
   }
 
   /*

@@ -20,10 +20,9 @@ export class ShowingService {
   /** GET showings by movieid. Will 404 if id not found */
   getShowings(movieId: number): Observable<Showing[]> {
     // send the message _after_ fetching the movie
-    this.messageService.add(`ShowingService: fetched showings with movieId=${movieId}`);
     const url = `${this.showingsUrl}/${movieId}.app`;
     return this.http.get<Showing[]>(url).pipe(
-      tap(_ => this.log(`fetched showings movieId=${movieId}`)),
+      tap(_ => this.log('Current Showtimes for this film')),
       catchError(this.handleError<Showing[]>(`getShowings movieId=${movieId}`))
     );
   }
@@ -31,16 +30,15 @@ export class ShowingService {
   /** GET showing by showingid. Will 404 if id not found */
   getShowing(showingId: number): Observable<Showing> {
     // send the message _after_ fetching the movie
-    this.messageService.add(`ShowingService: fetched showing showingId=${showingId}`);
+    //this.messageService.add(`ShowingService: fetched showing showingId=${showingId}`);
     const url = `${this.showingUrl}/${showingId}.app`;
     return this.http.get<Showing>(url).pipe(
-      tap(_ => this.log(`fetched movieId=${showingId}`)),
       catchError(this.handleError<Showing>(`getMovie movieId=${showingId}`))
     );
   }
 
   private log(message: string) {
-    this.messageService.add(`MovieService: ${message}`);
+   // this.messageService.add(`MovieService: ${message}`);
   }
 
    /**

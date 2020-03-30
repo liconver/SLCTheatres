@@ -12,35 +12,47 @@ import { Router } from '@angular/router';
 export class LogInComponent implements OnInit {
 
   submitted = false;
-  signUp =false;
+  signUp = false;
   // TODO: CHANGE this when we're done
-  model1 = new User('', '');
-  
-  constructor( private router: Router, private userService: UserService, private messageService: MessageService) { }
+  model1: User;
+
+  constructor(private router: Router, private userService: UserService, private messageService: MessageService) {
+
+    
+   }
 
   ngOnInit(): void {
+    if(this.userService.isLoggedIn()) {
+     this.router.navigate(['/']);
+    } ;
+   this.model1 = new User('', '');
   }
 
 
   LoginSubmit(form) {
-  console.log(form.value);
-  this.submitted = true;
-  this.userService.loginUser(this.model1).subscribe(
-    response => {
-      let result = response;
-      console.log(result);
-      if(result > 0) {
-        this.router.navigate([''],)
-     } else{
-      this.model1 = new User('', '');
-      alert('incorrect login credentials');
-     }
-    },
-    error => {
-      console.log("Error in authentication");
-    }
-  );
+    console.log(form.value);
+    this.submitted = true;
+    this.userService.loginUser(this.model1).subscribe(
+      response => {
+        let result = response;
+        console.log(result);
+        if (result > 0) {
+          localStorage.setItem('token', result);
+          window.location.reload();
+          this.messageService.add('You just logged in');
+          this.router.navigate(['']);
+        } else {
+          this.model1 = new User('', '');
+          alert('incorrect login credentials');
+        }
+      },
+      error => {
+        console.log("Error in authentication");
+      }
+    );
   }
+
+
 
 
   // TODO: Remove this when we're done

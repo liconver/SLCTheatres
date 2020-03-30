@@ -10,28 +10,31 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class MovieService {
 
+  //private moviesUrl = 'http://localhost:9025/api/getmovies.app';
+  //private movieIdUrl = 'http://localhost:9025/api/getmovie'
+
   private moviesUrl = 'http://localhost:8082/SLKTheatres/api/getmovies.app';
   private movieIdUrl = 'http://localhost:8082/SLKTheatres/api/getmovie'
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
   private log(message: string) {
-    this.messageService.add(`MovieService: ${message}`);
+    //this.messageService.add(`MovieService: ${message}`);
   }
 
   /** GET movie by id. Will 404 if id not found */
   getMovie(movieId: number): Observable<Movie> {
     // send the message _after_ fetching the movie
-    this.messageService.add(`MovieService: fetched movie movieId=${movieId}`);
+   // this.messageService.add(`MovieService: fetched movie movieId=${movieId}`);
     const url = `${this.movieIdUrl}/${movieId}.app`;
     return this.http.get<Movie>(url).pipe(
-      tap(_ => this.log(`fetched movieId=${movieId}`)),
+      //tap(_ => this.log(`fetched movieId=${movieId}`)),
       catchError(this.handleError<Movie>(`getMovie movieId=${movieId}`))
     );
   }
 
   getMovies(): Observable<Movie[]> {
-    this.messageService.add('MovieService: fetched movies');
+   // this.messageService.add('MovieService: fetched movies');
     return this.http.get<Movie[]>(this.moviesUrl)
       .pipe(
         tap(_ => this.log('fetched movies')),

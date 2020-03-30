@@ -446,9 +446,15 @@
 
     <hr style="background-color: white;">
 
-    <div class="btn-group btn-group-toggle">
+    <div class="btn-group btn-group-toggle" *ngIf="this.isLoggedIn!=null">
         <label class="btn-secondary" ngbButtonLabel style="background-color: #0d6efd;">
-            <input type="checkbox" ngbButton [(ngModel)]="checkout.btn" (click)="sendSeats()" routerLink="/checkout">
+            <input type="checkbox" ngbButton [(ngModel)]="checkout.btn" (click)="sendSeats()" routerLink="/checkout" >
+            Checkout
+        </label>
+    </div>
+    <div class="btn-group btn-group-toggle" *ngIf="this.isLoggedIn==null" >
+        <label class="btn-secondary" ngbButtonLabel style="background-color: #0d6efd;">
+            <input type="checkbox" ngbButton  (click)="tellToLogIn()" >
             Checkout
         </label>
     </div>
