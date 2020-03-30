@@ -1,9 +1,8 @@
 package com.projecttwo.services;
 
-import javax.transaction.Transactional;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.projecttwo.model.Users;
@@ -23,9 +22,19 @@ public class UserService {
 		return uD.insertUser(user);
 	}
 	
-	/*@Transactional
-	public User getUser(String username) {
-		return uD.getUser(username);
-	}*/
+//	@Transactional
+	public Users getUser(int id) {
+		return uD.getUserById(id);
+	}
+	
+	public void getAllUsers() {
+		System.out.println("in get all users service");
+		uD.getAllUsers();
+	}
+	
+	public Users getUserByUsername(String username) {
+		return uD.getUserByUsername(username);
+		
+	}
 
 }

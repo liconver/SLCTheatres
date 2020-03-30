@@ -24,8 +24,12 @@ public class PurchaseDaoImpl /*implements PurchaseDao*/{
 		this.sesFact = sesFact;
 	}
 	
-	public void insert(Purchase purchase) {
+	public int insert(Purchase purchase) {
+		System.out.println(purchase.getPurchaseId());
 		sesFact.getCurrentSession().save(purchase);
+		System.out.println(purchase.getPurchaseId());
+		return purchase.getPurchaseId();
+		
 	}
 
 //	public void update(Purchase purchase) {
@@ -54,20 +58,4 @@ public class PurchaseDaoImpl /*implements PurchaseDao*/{
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

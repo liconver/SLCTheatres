@@ -41,7 +41,7 @@ export class LogInComponent implements OnInit {
           
           window.location.reload();
           this.messageService.add('You just logged in');
-          //this.router.navigate(['']);
+          this.router.navigate(['']);
           
         } else {
           this.model1 = new User('', '');
