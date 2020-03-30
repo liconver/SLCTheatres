@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SeatDataService } from '../seat-data.service';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
+import { ifError } from 'assert';
 
 @Component({
   selector: 'app-checkout',
@@ -12,7 +13,7 @@ export class CheckoutComponent implements OnInit {
 
   readonly ROOT_URL = "http://localhost:8080/SLKTheatres/purchaseapi/purchase.app";
 
-  message:number[];
+  message: number[];
   val: any;
   seatService: SeatDataService = new SeatDataService;
   list = [];
@@ -64,7 +65,14 @@ export class CheckoutComponent implements OnInit {
     console.log(this.ticketJSON);
   }
 
+  removePurchases(){
+    localStorage.removeItem('seats');
+    this.data.changeMessage([]);
+  }
+
   async postPurchase() {
+
+    
 
     this.createTicketPayload();
     this.checkTotalCost();
@@ -83,6 +91,7 @@ export class CheckoutComponent implements OnInit {
         resolve(this.val);
       });
     });
+
   }
 
   constructor(private data: SeatDataService, private httpClient: HttpClient) { }
@@ -93,6 +102,19 @@ export class CheckoutComponent implements OnInit {
     console.log(this.message);
     this.list = this.message;
 
+    //THis
+
+    if (this.list.length == 0) { //if list is empty, check the storage
+      let temp = JSON.parse(localStorage.getItem('seats'));
+        if(temp != null){
+        this.list = temp;
+        }
+
+    } else {
+      // console.log("Not empty mate, storing");
+      localStorage.setItem('seats', JSON.stringify(this.list));
+    }
+
     console.log(this.message.length);
     for (let i = 0; i < this.list.length; i++) {
       // this.out.push({ seat: this.list[i], type: "Adult" });
@@ -100,7 +122,9 @@ export class CheckoutComponent implements OnInit {
     }
     console.log("my out ");
     console.log(this.out);
+
   }
+
 
 }
 
@@ -109,5 +133,5 @@ export class TicketTypes {
 }
 
 export class Out {
-  constructor(public seat: number, public type: string, public name:string) { }
+  constructor(public seat: number, public type: string, public name: string) { }
 }

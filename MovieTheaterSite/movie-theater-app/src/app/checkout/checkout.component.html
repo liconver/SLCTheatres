@@ -29,7 +29,7 @@
     <hr style="background-color: white;">
     <div class="btn-group btn-group-toggle">
         <label class="btn-secondary" ngbButtonLabel style="background-color: #0d6efd;">
-            <input type="checkbox" ngbButton (click)="postPurchase()" routerLink="/dashboard"> Purchase
+            <input type="checkbox" ngbButton (click)="postPurchase()" (click)="removePurchases()" routerLink="/dashboard"> Purchase
             <!--[(ngModel)]="checkout.btn" -->
         </label>
     </div>
