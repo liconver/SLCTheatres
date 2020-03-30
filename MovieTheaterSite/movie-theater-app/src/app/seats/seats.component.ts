@@ -35,7 +35,7 @@ export class SeatsComponent implements OnInit {
               private httpClient: HttpClient, private route: ActivatedRoute) { }
 
  readLocalStorageValue(key) {
-    return localStorage.getItem(key);
+    return sessionStorage.getItem(key);
   }
 
   sendSeats() {

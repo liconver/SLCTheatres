@@ -22,9 +22,9 @@ export class LogInComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    if(this.userService.isLoggedIn()) {
-     this.router.navigate(['/']);
-    } ;
+    // if(this.userService.isLoggedIn()) {
+    //  this.router.navigate(['/']);
+    // } ;
    this.model1 = new User('', '');
   }
 
@@ -37,10 +37,12 @@ export class LogInComponent implements OnInit {
         let result = response;
         console.log(result);
         if (result > 0) {
-          localStorage.setItem('token', result);
+          sessionStorage.setItem('token', result);
+          
           window.location.reload();
           this.messageService.add('You just logged in');
-          this.router.navigate(['']);
+          //this.router.navigate(['']);
+          
         } else {
           this.model1 = new User('', '');
           alert('incorrect login credentials');
@@ -56,7 +58,7 @@ export class LogInComponent implements OnInit {
 
 
   // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model1); }
+  get diagnostic() { return 'Hi '+ this.model1.username; }
 
 
 }

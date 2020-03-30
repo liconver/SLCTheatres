@@ -10,25 +10,25 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'SLC Theatres';
-  status;
+  isLoggedIn;
 
   constructor(private router: Router, private messageService: MessageService){
   }
   
   ngOnInit(): void {
-    this.status = this.readLocalStorageValue('token');
+    this.isLoggedIn = this.readLocalStorageValue('token');
    
   }
     readLocalStorageValue(key) {
-      return localStorage.getItem(key);
+      return sessionStorage.getItem(key);
   }
 
   logout() {
     // Remove the token from the localStorage.  
-    localStorage.removeItem('token');
+    sessionStorage.removeItem('token');
     window.location.reload();
     this.router.navigate(['']);
-    this.messageService.add('You Just Logged Out '+localStorage.getItem('token'));
+    this.messageService.add('You Just Logged Out '+sessionStorage.getItem('token'));
 
     //setTimeout( window.location.reload(), 5000) ;
   }

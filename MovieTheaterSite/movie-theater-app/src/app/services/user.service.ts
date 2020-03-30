@@ -50,8 +50,8 @@ export class UserService {
   }
 
   logout() {
-    // Remove the token from the localStorage.  
-    localStorage.removeItem('token');
+    // Remove the token from the sessionStorage.  
+    sessionStorage.removeItem('token');
 
     this.router.navigate(['']);
 
@@ -60,7 +60,7 @@ export class UserService {
   isLoggedIn() {
 
     // get the token from the localStorage as we have to work on this token.  
-    let token = localStorage.getItem('token');
+    let token = sessionStorage.getItem('token');
 
     // check whether if token have something or it is null.  
     if (!token) {
