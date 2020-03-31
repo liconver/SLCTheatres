@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+
 @Entity
 @Table(name = "Users")
 public class Users {
@@ -32,6 +34,7 @@ public class Users {
 	private String email;
 
 	@OneToMany(mappedBy = "userHolder", fetch = FetchType.EAGER)
+	@JsonIdentityReference(alwaysAsId = true)
 	private List<Purchase> pList = new ArrayList<>();
 
 	public Users() {

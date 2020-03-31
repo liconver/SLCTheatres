@@ -1,4 +1,4 @@
-<div class="container">
+<div class="justify-content-center container-fluid col-4" style="margin: auto;">
     <h2 *ngIf="this.isLoggedIn ==null" >Please Login</h2>
     <h2 *ngIf="this.isLoggedIn!=null">Please Select a Movie</h2>
     <form #loginForm="ngForm" (ngSubmit)="LoginSubmit(loginForm)" style="width: 35rem;">
@@ -21,6 +21,9 @@
             [disabled]="!loginForm.form.valid">Submit</button>
             <a routerLink="/signup">
         <button type="button" class="btn btn-light" >Sign up</button>
+        </a>
+        <a routerLink="/forgot">
+            <button type="button" class="btn btn-info"style="margin: 2rem; ">Forgot Password?</button>
         </a>
     </form>
 </div>

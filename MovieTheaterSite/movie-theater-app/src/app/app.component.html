@@ -1,5 +1,7 @@
-<h1 class="text-center">{{title}}</h1>
-<div style="width: 45rem; padding: .5rem;">
+<div class="d-flex align-self-center">
+<img src="assets/SLC.png" style="margin: 0 auto; width: 20rem;" >
+</div>
+<div class="justify-content-center" style="width: 45rem; padding: .5rem; margin: auto;">
 <nav class="nav nav-pills nav-justified">
      <li class="nav-item" >
           <a routerLink="/dashboard" class="nav-link active">Home</a>
@@ -11,7 +13,7 @@
           <a routerLink="/login" class="nav-link active"  >Login/Sign-up</a>
      </li>
      <li class="nav-item" *ngIf="this.isLoggedIn!=null" >
-          <a routerLink="/" class="nav-link active" >View Past Puchases</a>
+          <a routerLink="/purchases" class="nav-link active" >View Past Puchases</a>
      </li>
      <li class="nav-item" *ngIf="this.isLoggedIn!=null" >
           <a (click)= "this.logout()" class="nav-link active" >Logout</a>

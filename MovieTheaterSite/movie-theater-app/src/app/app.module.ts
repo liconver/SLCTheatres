@@ -19,6 +19,9 @@ import { SignupComponent } from './signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SeatsComponent } from './seats/seats.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { PurchasePageComponent } from './purchase-page/purchase-page.component';
+import { ForgotSiteComponent } from './forgot-site/forgot-site.component';
+import { SplashComponent } from './splash/splash.component';
 
 
 @NgModule({
@@ -32,7 +35,10 @@ import { CheckoutComponent } from './checkout/checkout.component';
     SignupComponent,
 
     SeatsComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    PurchasePageComponent,
+    ForgotSiteComponent,
+    SplashComponent
   ],
   imports: [
     BrowserModule,

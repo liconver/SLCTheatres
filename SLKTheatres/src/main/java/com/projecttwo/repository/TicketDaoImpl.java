@@ -34,7 +34,18 @@ private SessionFactory sesFact;
 	}
 	
 	public List<Ticket> selectAll(){
+		System.out.println("get all tickets from db");
 		return sesFact.getCurrentSession().createQuery("from Ticket", Ticket.class).list();
 	}
+	
+	public List<Ticket> selectAllByUser(int userId) {
+		List<Ticket> pList = sesFact.getCurrentSession().createQuery("select t from Ticket t inner join t.purchaseHolder where user_id_fk = '" + userId + "'", Ticket.class).list();
+		if (pList.size() == 0) {
+			System.out.println("Panic");
+			return null;
+		}
+		return pList;
+	}
+
 
 }

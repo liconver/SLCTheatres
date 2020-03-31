@@ -1148,3 +1148,42 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.ui 2 2 2020-03-30 15:16:45.319
 !MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 20:41:06.642
+!MESSAGE Preparing classpath changed notification SLKTheatres
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 20:41:06.644
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 20:41:06.655
+!MESSAGE classpath=97 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 20:41:06.673
+!MESSAGE buffering callback sts4.classpath.VwbtILgu SLKTheatres false 97
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 20:41:06.675
+!MESSAGE executing callback sts4.classpath.VwbtILgu 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 20:41:07.397
+!MESSAGE executing callback sts4.classpath.VwbtILgu SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 20:41:09.782
+!MESSAGE Preparing classpath changed notification SLKTheatres
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 20:41:09.783
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 20:41:09.802
+!MESSAGE classpath=97 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 20:41:09.873
+!MESSAGE buffering callback sts4.classpath.VwbtILgu SLKTheatres false 97
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 20:41:09.897
+!MESSAGE executing callback sts4.classpath.VwbtILgu 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 20:41:10.373
+!MESSAGE executing callback sts4.classpath.VwbtILgu SUCCESS [done]
+
+!ENTRY org.eclipse.recommenders.models.rcp 1 0 2020-03-30 21:20:02.857
+!MESSAGE org.eclipse.recommenders:index::zip:0.0.0 could not be resolved from the model repositories. Are you offline?

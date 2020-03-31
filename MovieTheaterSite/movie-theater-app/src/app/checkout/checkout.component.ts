@@ -13,7 +13,7 @@ export class CheckoutComponent implements OnInit {
 
   readonly ROOT_URL = "http://localhost:8082/SLKTheatres/purchaseapi/purchase.app";
 
-  message: number[];
+  message: number[]; 
   val: any;
   seatService: SeatDataService = new SeatDataService;
   list = [];

@@ -1,0 +1,22 @@
+<br><br>
+<h1>Past Purchases</h1>
+<br><br>
+<div class= "table justify-content-center container-fluid col-11" >
+<table class= "table table-striped table-secondary rounded table-responsive-md">
+    <thead>
+        <th>Purchase ID</th>
+        <th>Movie</th>
+        <th>Showtime</th>
+        <th>Seat(s)</th>
+        <th>Cost</th>
+    </thead>
+    <tr *ngFor= "let purchase of purchases">
+        <td> {{purchase.purchaseHolder.purchaseId}} </td>
+        <td> <a href="#movieLink"> {{purchase.seatHolder.showingIdFK.movieHolder.title}} </a> </td>
+        <td > {{purchase.seatHolder.showingIdFK.showtime}} </td>
+        <td > {{purchase.seatHolder.seatName}} </td>
+        <td> {{purchase.purchaseHolder.totalCost}} </td> 
+    </tr>
+</table>
+</div>
+

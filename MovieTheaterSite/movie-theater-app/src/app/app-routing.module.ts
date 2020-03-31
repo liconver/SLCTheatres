@@ -7,9 +7,15 @@ import { LogInComponent } from './log-in/log-in.component';
 import { SignupComponent } from './signup/signup.component';
 import { SeatsComponent} from './seats/seats.component';
 import {CheckoutComponent } from './checkout/checkout.component';
+import { PurchasePageComponent } from './purchase-page/purchase-page.component';
+import { ForgotSiteComponent } from './forgot-site/forgot-site.component';
+import { SplashComponent } from './splash/splash.component';
 
 
 const routes: Routes = [
+  { path: 'splash', component: SplashComponent},
+  { path: 'purchases', component: PurchasePageComponent},
+  { path: 'forgot', component: ForgotSiteComponent},
   { path: 'checkout', component: CheckoutComponent},
   { path: 'seats/:showingId', component: SeatsComponent},
   { path: 'movies', component: MoviesComponent },

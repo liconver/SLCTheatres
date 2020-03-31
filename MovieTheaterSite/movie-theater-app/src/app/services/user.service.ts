@@ -30,7 +30,7 @@ export class UserService {
   addUser(user: User): Observable<any> {
     console.log("in adduser");
     return this.http.post(this.signupUrl, user).pipe(
-      tap((user: User) => this.log(`added user w/ username=${user.username}`)),
+      //tap((user: User) => this.log(`added user w/ username=${user.username}`)),
       catchError(this.handleError<User>('addUser'))
     );
   }
@@ -39,7 +39,7 @@ export class UserService {
   getUser(username: string): Observable<User> {
     const url = `${this.signupUrl}/${username}`;
     return this.http.get<User>(url).pipe(
-      tap(_ => this.log(`fetched user username=${username}`)),
+     // tap(_ => this.log(`fetched user username=${username}`)),
       catchError(this.handleError<User>(`getUser username=${username}`))
     );
   }
