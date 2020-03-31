@@ -8,6 +8,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.projecttwo.model.Purchase;
 import com.projecttwo.model.Ticket;
 
 @Transactional
@@ -36,5 +37,13 @@ private SessionFactory sesFact;
 	public List<Ticket> selectAll(){
 		return sesFact.getCurrentSession().createQuery("from Ticket", Ticket.class).list();
 	}
-
+	
+	public List<Ticket> selectAllByUser(int userId) {
+		List<Ticket> pList = sesFact.getCurrentSession().createQuery("select t from Ticket t inner join t.purchaseHolder where user_id_fk = '" + userId + "'", Ticket.class).list();
+		if (pList.size() == 0) {
+			System.out.println("Panic");
+			return null;
+		}
+		return pList;
+	}
 }

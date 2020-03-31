@@ -1,0 +1,28 @@
+<br>
+<br>
+<div>
+<h1>So You Forgot Your Login Credentials?</h1>
+<br>
+<p>No worries!.. Confirm your email below and you will receive a login-recovery email soon. </p>
+<br>
+<br>
+<br>
+<p> Thank you for being a valued customer! </p>
+</div>
+<br>
+<br>
+<div class= "justify-content-center container-fluid col-4">
+    <form [formGroup]="forgotForm" #EmailInfo class="form-inline" class="text-center border p-4" (ngSubmit)="onSubmit($event)" novalidate >
+		<div class="form-group mb-2">
+			<label for="inputEmail4">Email</label>
+     		<input type="email" class="form-control" id="inputEmail4" placeholder= "email@email.com" formControlName= "email1">
+        </div>
+        <br><br>
+		<div class="form-group mb-2">
+			<label for="inputEmail4">Confirm Email</label>
+     		<input type="email" class="form-control" id="inputEmail4" placeholder= "email@email.com" formControlName= "email2">
+        </div>
+        <br>
+		<button type="submit" class="btn btn-primary mb-2">Request Password</button>
+	</form>
+</div>

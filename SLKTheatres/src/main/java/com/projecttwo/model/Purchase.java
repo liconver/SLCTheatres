@@ -15,8 +15,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
 @Table(name = "Purchase")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "purchaseId")
 public class Purchase {
 	
 	@Id
@@ -94,8 +99,7 @@ public class Purchase {
 
 	@Override
 	public String toString() {
-		return "Purchase [purchaseId=" + purchaseId + ", totalCost=" + totalCost + ", userIdFK=" + userHolder.getUserId() + ", tList="
-				+ tList + "]";
+		return "Purchase [purchaseId=" + purchaseId + ", totalCost=" + totalCost + ", userIdFK=" + userHolder.getUserId() + "]";	//", tList=" + tList +
 	}
 
 }

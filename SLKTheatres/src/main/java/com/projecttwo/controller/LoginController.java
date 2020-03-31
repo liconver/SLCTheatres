@@ -1,6 +1,5 @@
 package com.projecttwo.controller;
 
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +15,6 @@ import com.projecttwo.services.LoginService;
 public class LoginController {
 
 	private LoginService loginServ;
-	private SessionFactory sesFact;
 	
 	public LoginController() {
 	}

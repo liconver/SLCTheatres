@@ -1,0 +1,37 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav class="sidenav" mode= "over" [(opened)]= "opened">
+    <mat-toolbar>User Profile</mat-toolbar>
+    <mat-nav-list>
+      <br>
+      <a mat-list-item href="#">User Page</a>
+      <br>
+      <a mat-list-item routerLink="/purchases" routerLinkActive="active">Past Purchases</a>
+      <br>
+      <a mat-list-item routerLink="#">Your Upcoming Shows</a>
+    </mat-nav-list>
+    <br>
+    <br>
+    <br>
+    <button mat-stroked-button routerLink="/forgot" routerLinkActive="active" color="warn">Forgot Credentials</button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="sidenav.toggle()" >
+        <mat-icon aria-label="Side nav toggle icon">theaters</mat-icon>
+      </button>
+      <span>SLC Theatres</span>
+      <span class="spacer"></span>
+        <a mat-list-item href="#">
+          <mat-icon aria-label="Side nav toggle icon">movie_creation</mat-icon>
+          Movies
+        </a>
+        <a mat-list-item href="#">
+          <mat-icon aria-label="Side nav toggle icon">local_activity</mat-icon>
+          Other Stuff</a>
+        <a mat-list-item href="#">
+          <mat-icon aria-label="Side nav toggle icon">scatter_plot</mat-icon>
+          More Stuff</a>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -12,6 +12,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
 @Table(name = "Users")
 public class Users {
@@ -32,6 +36,7 @@ public class Users {
 	private String email;
 
 	@OneToMany(mappedBy = "userHolder", fetch = FetchType.EAGER)
+	@JsonIdentityReference(alwaysAsId = true)
 	private List<Purchase> pList = new ArrayList<>();
 
 	public Users() {
@@ -138,7 +143,7 @@ public class Users {
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", firstName="
-				+ firstName + ", lastName=" + lastName + ", email=" + email + ", pList=" + pList + "]";
+				+ firstName + ", lastName=" + lastName + ", email=" + email + ", pList=" + pList.get(0).getPurchaseId() + "]";
 	}
 
 }

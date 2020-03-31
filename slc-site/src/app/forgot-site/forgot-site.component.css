@@ -1,0 +1,21 @@
+div {
+    text-align: center;
+}   
+
+h1 {
+    font-size: 36px;
+    }
+
+p {
+    font-size: 20px;
+    }
+
+form {
+    background-color: whitesmoke;
+}
+label {
+    font-size: 24px;
+}
+input {
+    text-align: center;
+}

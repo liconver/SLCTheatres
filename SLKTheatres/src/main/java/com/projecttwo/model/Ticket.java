@@ -25,10 +25,10 @@ public class Ticket {
 	@JoinColumn(name = "seat_id_FK")
 	private ShowingSeat seatHolder;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "ticket_type_id_FK")
 	private TicketType ticketTypeHolder;
-	
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "purchase_id_FK")
