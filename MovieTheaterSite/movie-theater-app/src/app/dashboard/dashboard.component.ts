@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovies();
+   // window.location.reload();
     
   }
 

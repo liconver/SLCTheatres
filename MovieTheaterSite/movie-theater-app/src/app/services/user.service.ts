@@ -53,7 +53,7 @@ export class UserService {
     // Remove the token from the sessionStorage.  
     sessionStorage.removeItem('token');
 
-    this.router.navigate(['']);
+    //this.router.navigate(['']);
 
   }
 

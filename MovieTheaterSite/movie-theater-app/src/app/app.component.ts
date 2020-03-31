@@ -27,7 +27,7 @@ export class AppComponent {
     // Remove the token from the localStorage.  
     sessionStorage.removeItem('token');
     window.location.reload();
-    this.router.navigate(['']);
+    //this.router.navigate(['']);
     this.messageService.add('You Just Logged Out '+sessionStorage.getItem('token'));
 
     //setTimeout( window.location.reload(), 5000) ;

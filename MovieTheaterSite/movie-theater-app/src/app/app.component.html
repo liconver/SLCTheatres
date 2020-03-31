@@ -14,7 +14,7 @@
           <a routerLink="/" class="nav-link active" >View Past Puchases</a>
      </li>
      <li class="nav-item" *ngIf="this.isLoggedIn!=null" >
-          <a routerLink="/" (click)= "this.logout()" class="nav-link active" >Logout</a>
+          <a (click)= "this.logout()" class="nav-link active" >Logout</a>
      </li>
 </nav>
 </div>

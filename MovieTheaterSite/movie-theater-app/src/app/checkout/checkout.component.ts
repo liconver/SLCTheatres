@@ -108,6 +108,7 @@ export class CheckoutComponent implements OnInit {
     console.log(this.isLoggedIn);
     //THis
 
+    
     if (this.list.length == 0) { //if list is empty, check the storage
       let temp = JSON.parse(localStorage.getItem('seats'));
         if(temp != null){
