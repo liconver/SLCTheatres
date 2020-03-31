@@ -31,9 +31,7 @@ public class LoginController {
 	@PostMapping(value= "/login.app")
 	public @ResponseBody String login(@RequestParam("username") String username, @RequestParam("password") String password){
 		
-		Users user = loginServ.loginByUsername(username, password);
-		System.out.println(user + " hellooo");//for checking
-		
+		Users user = loginServ.loginByUsername(username, password);		
 		if(user == null) {
 			return "wronglogin.html";
 		}else {

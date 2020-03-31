@@ -2,8 +2,6 @@ package com.projecttwo;
 
 import java.sql.Timestamp;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -11,6 +9,7 @@ import com.projecttwo.model.Movie;
 import com.projecttwo.model.Purchase;
 import com.projecttwo.model.Showing;
 import com.projecttwo.model.ShowingSeat;
+import com.projecttwo.model.Ticket;
 import com.projecttwo.model.TicketType;
 import com.projecttwo.model.Users;
 import com.projecttwo.repository.MovieDaoImpl;
@@ -39,12 +38,10 @@ public class MainDriver {
 //	public static UserDaoImpl userDao;
 //	public static TicketTypeDaoImpl ticketTypeDao;
 //	public static TicketDaoImpl ticketDao;
-	
-	public final static Logger logger = Logger.getLogger(MainDriver.class);
-	
+		
 	public static void main(String[] args) {
 		
-		logger.setLevel(Level.FATAL);
+//		logger.setLevel(Level.FATAL);
 		
 		insertInitialValues();
 		
@@ -69,35 +66,37 @@ public class MainDriver {
 		
 		
 		
-		System.out.println(purchaseDao.selectAll());
-		System.out.println(purchaseDao.selectAllByUser(userDao.getUserByUsername("liam").getUserId()));
+		System.err.println(purchaseDao.selectAll());
+		System.err.println(purchaseDao.selectAllByUser(userDao.getUserByUsername("liam").getUserId()));
+		System.err.println(ticketDao.selectAll());
+		System.err.println(ticketDao.selectAllByUser(1));
 		
 	}
 	
 	public static void insertInitialValues() {
+		Timestamp timeStamp = new Timestamp(System.currentTimeMillis());
 		
-		/*
 		//Movie
 		Movie movie1 = new Movie("Tyler Perry: Black Don't Crack", "Another stupid TP movie for yall to think is funny.", 103, "");
 		Movie movie2 = new Movie("Naruto Live Action", "Better than AirBender Live Action but still bad", 86, "");
 		Movie movie3 = new Movie("Django: Flees the South", "Django kills more white people while running to the North", 124, "");
 		
 		//Showing
-		Showing showing1 = new Showing(1, "March 28 1pm");
-		Showing showing2 = new Showing(2, "March 28 3pm");
-		Showing showing3 = new Showing(3, "March 28 4pm");
-		*/
+		Showing showing1 = new Showing("March 28 1pm", movie1);
+		Showing showing2 = new Showing("March 28 3pm", movie3);
+		Showing showing3 = new Showing("March 28 4pm", movie2);
+		
 		//Seats
-		ShowingSeat seat1 = new ShowingSeat("A1", 0);
-		ShowingSeat seat2 = new ShowingSeat("B2", 0);
-		ShowingSeat seat3 = new ShowingSeat("C3", 0);
-		ShowingSeat seat4 = new ShowingSeat("D4", 1);
-		ShowingSeat seat5 = new ShowingSeat("E5", 1);
-		ShowingSeat seat6 = new ShowingSeat("F6", 1);
-		ShowingSeat seat7 = new ShowingSeat("G7", 0);
-		ShowingSeat seat8 = new ShowingSeat("H8", 2);
-		ShowingSeat seat9 = new ShowingSeat("I9", 2);
-		ShowingSeat seat10 = new ShowingSeat("A2", 0);
+		ShowingSeat seat1 = new ShowingSeat("A1", 0, showing2);
+		ShowingSeat seat2 = new ShowingSeat("B2", 0, showing2);
+		ShowingSeat seat3 = new ShowingSeat("C3", 0, showing3);
+		ShowingSeat seat4 = new ShowingSeat("D4", 1, showing3);
+		ShowingSeat seat5 = new ShowingSeat("E5", 1, showing2);
+		ShowingSeat seat6 = new ShowingSeat("F6", 1, showing1);
+		ShowingSeat seat7 = new ShowingSeat("G7", 0, showing2);
+		ShowingSeat seat8 = new ShowingSeat("H8", 2, showing2);
+		ShowingSeat seat9 = new ShowingSeat("I9", 2, showing1);
+		ShowingSeat seat10 = new ShowingSeat("A2", 0, showing3);
 		
 		//User
 		Users user1 = new Users("cjf", "7777", "Christian", "Falzone", "c@gmail.com");
@@ -129,16 +128,22 @@ public class MainDriver {
 		Purchase purchase8 = new Purchase(6.99, user3);
 		user3.getpList().add(purchase8);
 				
-		//Ticket
-//		Ticket ticket1 = new Ticket();
-		
 		//TicketType
 		TicketType ticketType1 = new TicketType("Adult", 12.99);
 		TicketType ticketType2 = new TicketType("Senior", 8.99);
 		TicketType ticketType3 = new TicketType("Child", 6.99);
 		
+		//Ticket
+		Ticket ticket1 = new Ticket(seat10, ticketType2, purchase5);
+		Ticket ticket2 = new Ticket(seat5, ticketType1, purchase8);
+		Ticket ticket3 = new Ticket(seat8, ticketType1, purchase2);
+		Ticket ticket4 = new Ticket(seat1, ticketType2, purchase4);
+		Ticket ticket5 = new Ticket(seat2, ticketType3, purchase7);
 		
 ///////////Inserts///////////////
+		movieDao.insert(movie1);	movieDao.insert(movie2);	movieDao.insert(movie3);
+		
+		showingDao.insert(showing1);	showingDao.insert(showing2);	showingDao.insert(showing3);
 		
 		seatDao.insert(seat1);	seatDao.insert(seat2);	seatDao.insert(seat3);	seatDao.insert(seat4);
 		seatDao.insert(seat5);	seatDao.insert(seat6);	seatDao.insert(seat7);	seatDao.insert(seat8);
@@ -153,6 +158,9 @@ public class MainDriver {
 		ticketTypeDao.insert(ticketType2);
 		ticketTypeDao.insert(ticketType3);
 		
+		ticketDao.insert(ticket1);		ticketDao.insert(ticket2);
+		ticketDao.insert(ticket3);		ticketDao.insert(ticket4);
+		ticketDao.insert(ticket5);
 		
 	}
 }

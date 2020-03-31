@@ -11,7 +11,7 @@ import { ifError } from 'assert';
 })
 export class CheckoutComponent implements OnInit {
 
-  readonly ROOT_URL = "http://localhost:8082/SLKTheatres/purchaseapi/purchase.app";
+  readonly ROOT_URL = "http://localhost:9005/SLKTheatres/purchaseapi/purchase.app";
 
   message: number[]; 
   val: any;

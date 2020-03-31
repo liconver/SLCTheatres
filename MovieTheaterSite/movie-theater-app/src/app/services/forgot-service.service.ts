@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class ForgotServiceService {
 
-  ROOT_URL = 'http://localhost:8082/SLKTheatres/forgotpassword/recover.app';
+  ROOT_URL = 'http://localhost:9005/SLKTheatres/forgotpassword/recover.app';
 
   constructor(private http: HttpClient, private router: Router) { }
 

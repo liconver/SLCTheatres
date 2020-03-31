@@ -11,7 +11,7 @@ import { EmailDetail } from './email';
 })
 export class ForgotSiteComponent implements OnInit {
 
-  ROOT_URL = 'http://localhost:8082/SLKTheatres/forgotpassword/recover.app';
+  ROOT_URL = 'http://localhost:9005/SLKTheatres/forgotpassword/recover.app';
   loading = false;
   private emailDetail = new EmailDetail();
 

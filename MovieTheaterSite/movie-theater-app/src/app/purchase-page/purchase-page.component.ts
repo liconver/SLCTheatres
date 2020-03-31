@@ -15,12 +15,11 @@ export class PurchasePageComponent implements OnInit {
 
   public PastPurchases = [];
 
-  ROOT_URL = 'http://localhost:8082/SLKTheatres/ppapi/getallpurchases.app';
-  userIdUrl = 'http://localhost:8082/SLKTheatres/ppapi/getallpurchase';
+  ROOT_URL = 'http://localhost:9005/SLKTheatres/ppapi/getallpurchases.app';
+  userIdUrl = 'http://localhost:9005/SLKTheatres/ppapi/getallpurchase';
   purchases: purchase[];
   userId;
   constructor(private http: HttpClient,private route: ActivatedRoute) { }
-
 
   ngOnInit(): void {
      //this.getPurchases();

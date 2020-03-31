@@ -54,6 +54,12 @@ public class Showing {
 		this.showtime = showtime;
 		this.movieHolder = movieHolder;
 	}
+	
+	public Showing(String showtime, Movie movieHolder) {
+		super();
+		this.showtime = showtime;
+		this.movieHolder = movieHolder;
+	}
 
 	public int getShowingId() {
 		return showingId;
