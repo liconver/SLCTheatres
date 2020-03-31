@@ -1187,3 +1187,21 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.recommenders.models.rcp 1 0 2020-03-30 21:20:02.857
 !MESSAGE org.eclipse.recommenders:index::zip:0.0.0 could not be resolved from the model repositories. Are you offline?
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-31 03:53:19.773
+!MESSAGE Preparing classpath changed notification SLKTheatres
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-31 03:53:19.776
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-31 03:53:19.789
+!MESSAGE classpath=99 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-31 03:53:19.805
+!MESSAGE buffering callback sts4.classpath.VwbtILgu SLKTheatres false 99
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-31 03:53:19.807
+!MESSAGE executing callback sts4.classpath.VwbtILgu 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-31 03:53:20.428
+!MESSAGE executing callback sts4.classpath.VwbtILgu SUCCESS [done]

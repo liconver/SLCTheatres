@@ -27,7 +27,7 @@ public class LoginService {
 		
 		for(Users user : userList) {
 			if(user.getUsername().equals(username) && user.getPassword().equals(password)) {
-				verify = 1;
+				verify = user.getUserId();
 			}
 		}
 		System.out.println("Login Service: after the for loop verify = " + verify);//for checking

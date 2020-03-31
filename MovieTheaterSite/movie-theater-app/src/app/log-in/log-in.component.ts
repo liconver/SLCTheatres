@@ -32,12 +32,12 @@ export class LogInComponent implements OnInit {
 
 
   LoginSubmit(form) {
-    console.log(form.value);
+    //console.log(form.value);
     this.submitted = true;
     this.userService.loginUser(this.model1).subscribe(
       response => {
         let result = response;
-        console.log(result);
+        //console.log(result);
         if (result > 0) {
           sessionStorage.setItem('token', result);
           window.location.reload();
@@ -52,7 +52,7 @@ export class LogInComponent implements OnInit {
         }
       },
       error => {
-        console.log("Error in authentication");
+        //console.log("Error in authentication");
       }
     );
   }

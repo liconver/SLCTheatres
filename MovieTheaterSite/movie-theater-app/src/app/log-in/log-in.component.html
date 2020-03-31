@@ -1,8 +1,13 @@
 <div class="justify-content-center container-fluid col-4" style="margin: auto;">
-    <h2 *ngIf="this.isLoggedIn ==null" >Please Login</h2>
-    <h2 *ngIf="this.isLoggedIn!=null">Please Select a Movie</h2>
+    <h2 *ngIf="this.isLoggedIn ==null">Please Login</h2>
+    <h2 *ngIf="this.isLoggedIn !=null" style="margin-top: 10rem; margin-left: 5rem;">Please Select a Movie</h2>
+
+</div>
+
+<div class="justify-content-center container-fluid col-4" style="margin: auto;" *ngIf="this.isLoggedIn ==null">
+
     <form #loginForm="ngForm" (ngSubmit)="LoginSubmit(loginForm)" style="width: 35rem;">
-       {{diagnostic}}
+        {{diagnostic}}
         <br>
         <div class="form-group">
             <label for="username">Username</label>
@@ -19,12 +24,11 @@
         </div>
         <button type="submit" class="btn btn-success" style="margin: 2rem;"
             [disabled]="!loginForm.form.valid">Submit</button>
-            <a routerLink="/signup">
-        <button type="button" class="btn btn-light" >Sign up</button>
+        <a routerLink="/signup">
+            <button type="button" class="btn btn-light">Sign up</button>
         </a>
         <a routerLink="/forgot">
-            <button type="button" class="btn btn-info"style="margin: 2rem; ">Forgot Password?</button>
+            <button type="button" class="btn btn-info" style="margin: 2rem; ">Forgot Password?</button>
         </a>
     </form>
 </div>
-

@@ -37,10 +37,10 @@ export class ForgotSiteComponent implements OnInit {
         response => {
 
           const result = response;
-          console.log(result);
+          //console.log(result);
 
           if (result > 0) {
-            console.log('Email send to Controller!')
+            //console.log('Email send to Controller!')
           }
           else {
             alert('Error occured while submitting. Please try again later.');

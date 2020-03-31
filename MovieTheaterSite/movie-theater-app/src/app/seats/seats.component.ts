@@ -40,7 +40,7 @@ export class SeatsComponent implements OnInit {
 
   sendSeats() {
 
-    console.log("These are my selected seats!");
+    // console.log("These are my selected seats!");
     let list = [];
     for (let i = 0; i < this.seats.length; i++) {
       if (this.seats[i].selected) {
@@ -50,8 +50,8 @@ export class SeatsComponent implements OnInit {
         });
       }
     }
-    console.log("List of seats to buy!");
-    console.log(list);
+    // console.log("List of seats to buy!");
+    // console.log(list);
 
     this.data.changeMessage(list);
 
@@ -62,8 +62,8 @@ export class SeatsComponent implements OnInit {
       const showingId = +this.route.snapshot.paramMap.get('showingId');
       this.httpClient.get(this.ROOT_URL + "?id=" + showingId).subscribe((val) => {
         this.val = val;
-        console.log("This is my data: ");
-        console.log(this.val);
+        // console.log("This is my data: ");
+        // console.log(this.val);
         resolve(this.val);
       });
     });
@@ -85,7 +85,7 @@ export class SeatsComponent implements OnInit {
     });
 
     this.isLoggedIn = this.readLocalStorageValue('token');
-    console.log(this.isLoggedIn);
+    //console.log(this.isLoggedIn);
   }
 
   tellToLogIn(){
@@ -106,16 +106,16 @@ export class SeatsComponent implements OnInit {
         taken: false
       });
 
-      console.log("CHECKING VAL HERE");
-      console.log(this.val);
+      // console.log("CHECKING VAL HERE");
+      // console.log(this.val);
 
     }
 
-    console.log(this.seats);
+   // console.log(this.seats);
   }
 
   setUpSeatData() {
-    console.log("In setup data");
+    // console.log("In setup data");
 
     for (let i = 0; i < this.val.length; i++) {
       // console.log(this.val[i]);

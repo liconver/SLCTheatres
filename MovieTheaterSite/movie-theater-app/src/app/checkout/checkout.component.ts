@@ -39,7 +39,7 @@ export class CheckoutComponent implements OnInit {
         this.totalCost += 6.99;
       }
     }
-    console.log(this.totalCost);
+    //console.log(this.totalCost);
   }
 
   createTicketPayload() {
@@ -61,8 +61,8 @@ export class CheckoutComponent implements OnInit {
         });
       }
     }
-    console.log("my payload");
-    console.log(this.ticketJSON);
+    //console.log("my payload");
+    //console.log(this.ticketJSON);
   }
 
   removePurchases(){
@@ -89,8 +89,8 @@ export class CheckoutComponent implements OnInit {
     return await new Promise((resolve, reject) => {
       this.httpClient.post(this.ROOT_URL, body, options).subscribe((val) => {
         this.val = val;
-        console.log("This is my data: ");
-        console.log(this.val);
+        //console.log("This is my data: ");
+        //console.log(this.val);
         resolve(this.val);
       });
     });
@@ -101,11 +101,11 @@ export class CheckoutComponent implements OnInit {
   ngOnInit(): void {
 
     this.data.currentMessage.subscribe(message => this.message = message);
-    console.log("My MESSAGE in CHECKOUT!");
-    console.log(this.message);
+    //console.log("My MESSAGE in CHECKOUT!");
+    //console.log(this.message);
     this.list = this.message;
     this.isLoggedIn = this.readLocalStorageValue('token');
-    console.log(this.isLoggedIn);
+    //console.log(this.isLoggedIn);
     //THis
 
     
@@ -120,13 +120,13 @@ export class CheckoutComponent implements OnInit {
       localStorage.setItem('seats', JSON.stringify(this.list));
     }
 
-    console.log(this.message.length);
+    //console.log(this.message.length);
     for (let i = 0; i < this.list.length; i++) {
       // this.out.push({ seat: this.list[i], type: "Adult" });
       this.out.push(new Out(this.list[i].seatId, "Adult", this.list[i].seatName));
     }
-    console.log("my out ");
-    console.log(this.out);
+    //console.log("my out ");
+    //console.log(this.out);
 
   }
   readLocalStorageValue(key) {
