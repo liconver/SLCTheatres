@@ -63,7 +63,7 @@ export class SignupComponent implements OnInit {
       this.signUpUser.lastName = this.LastName.value;
       this.signUpUser.password = this.Password.value;
 
-      console.log(this.signUpUser)
+      // console.log(this.signUpUser)
       this.userService.addUser(this.signUpUser).subscribe(
         response => {
           let result = response;
